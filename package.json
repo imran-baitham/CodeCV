@@ -12,9 +12,11 @@
     "feature": "HYGEN_TMPLS=scripts/_templates yarn hygen feature with-prompt"
   },
   "dependencies": {
+    "@emotion/react": "^11.10.4",
     "@headlessui/react": "^1.7.1",
     "@heroicons/react": "^1.0.6",
     "@mantine/core": "^5.3.0",
+    "@mantine/hooks": "^5.3.0",
     "@mantine/prism": "^5.3.0",
     "@react-icons/all-files": "^4.1.0",
     "hygen": "^6.2.11",

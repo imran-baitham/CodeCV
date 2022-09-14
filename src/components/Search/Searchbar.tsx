@@ -104,7 +104,7 @@ export const SearchBar: React.FC<SearchProps> = ({ isOpen, setIsOpen }) => {
           leaveFrom="opacity-100"
           leaveTo="opacity-0"
         >
-          <div className="backdrop fixed inset-0 bg-opacity-25 transition-opacity" />
+          <div className="backdrop fixed inset-0 bg-opacity-25 backdrop-blur-sm transition-opacity" />
         </Transition.Child>
 
         <div className="fixed inset-0 z-10 overflow-y-auto p-4 sm:p-6 md:p-20">
@@ -163,8 +163,7 @@ export const SearchBar: React.FC<SearchProps> = ({ isOpen, setIsOpen }) => {
                               className={({ active }) =>
                                 classNames(
                                   "flex cursor-default select-none items-center px-5 py-5 rounded-xl border border-1 border-transparent dark:text-white text-black",
-                                  active &&
-                                    "dark:bg-zinc-900 bg-gray-200 dark:text-white text-black border border-1 border-black"
+                                  active ?  "dark:bg-zinc-900 bg-gray-200 dark:text-white text-black border border-1 border-black" : ""
                                 )
                               }
                             >
