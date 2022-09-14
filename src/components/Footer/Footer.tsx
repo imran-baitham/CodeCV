@@ -22,10 +22,7 @@ export function Footer() {
         >
           {navigation.main.map((item) => (
             <div key={item.name} className="px-5 py-2">
-              <a
-                href={item.href}
-                className="text-base text-gray-500"
-              >
+              <a href={item.href} className="text-base text-gray-500">
                 {item.name}
               </a>
             </div>

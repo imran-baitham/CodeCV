@@ -79,7 +79,9 @@ const navigation = {
 function Pipeline() {
   return (
     <div className="container_main py-12">
-      <h1 className="text-yellow-400 font-bold text-4xl text-center">FrameWorks</h1>
+      <h1 className="text-yellow-400 font-bold text-4xl text-center">
+        FrameWorks
+      </h1>
       <div className="pt-4">
         <div className="mt-8 flex justify-center space-x-2">
           {navigation.framework.map((item) => (

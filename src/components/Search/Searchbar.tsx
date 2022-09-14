@@ -163,7 +163,9 @@ export const SearchBar: React.FC<SearchProps> = ({ isOpen, setIsOpen }) => {
                               className={({ active }) =>
                                 classNames(
                                   "flex cursor-default select-none items-center px-5 py-5 rounded-xl border border-1 border-transparent dark:text-white text-black",
-                                  active ?  "dark:bg-zinc-900 bg-gray-200 dark:text-white text-black border border-1 border-black" : ""
+                                  active
+                                    ? "dark:bg-zinc-900 bg-gray-200 dark:text-white text-black border border-1 border-black"
+                                    : ""
                                 )
                               }
                             >
