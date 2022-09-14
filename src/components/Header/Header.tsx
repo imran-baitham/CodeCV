@@ -24,7 +24,7 @@ export const userNotifaction = [
   },
 ];
 
-function Header() {
+export function Header() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -83,5 +83,3 @@ function Header() {
     </header>
   );
 }
-
-export default Header;
