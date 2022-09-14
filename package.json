@@ -27,7 +27,8 @@
     "react-dom": "18.2.0",
     "react-icons": "^4.4.0",
     "swiper": "^8.4.0",
-    "tailwind-override": "^0.6.1"
+    "tailwind-override": "^0.6.1",
+    "typewriter-effect": "^2.19.0"
   },
   "devDependencies": {
     "@types/node": "18.7.18",
