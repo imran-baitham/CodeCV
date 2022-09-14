@@ -128,7 +128,7 @@ export const SearchBar: React.FC<SearchProps> = ({ isOpen, setIsOpen }) => {
                     icon="IoIosSearch"
                   />
                   <Combobox.Input
-                    className="h-14 w-full border-0 focus:outline-none bg-transparent pl-14 pr-4 text-gray-800 placeholder-gray-400 sm:text-sm"
+                    className="h-14 w-full border-0 focus:outline-none bg-transparent pl-14 pr-4 dark:text-white text-gray-800 dark:placeholder-gray-200 placeholder-gray-400 sm:text-sm"
                     placeholder="Search..."
                     onChange={(event) => setRawQuery(event.target.value)}
                   />

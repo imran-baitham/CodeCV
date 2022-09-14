@@ -1,7 +1,6 @@
 import type { NextPage } from "next";
 import { useTheme } from "next-themes";
 import Head from "next/head";
-import Header from "../components/Header/Header";
 
 const Home: NextPage = () => {
   const { theme, setTheme } = useTheme();
@@ -15,7 +14,6 @@ const Home: NextPage = () => {
       </Head>
 
       <main className="w-full dark:bg-zinc-800 bg-white">
-        <Header />
         <div className="h-screen flex items-center justify-center">
           <div>
             <h1 className="text-xl font-bold dark:text-white pb-8">
@@ -30,12 +28,6 @@ const Home: NextPage = () => {
           </div>
         </div>
       </main>
-
-      <footer className="flex items-center justify-center h-32 dark:bg-gray-600 bg-gray-200">
-        <h1 className="font-bold text-4xl dark:text-white text-black">
-          THE END
-        </h1>
-      </footer>
     </div>
   );
 };
