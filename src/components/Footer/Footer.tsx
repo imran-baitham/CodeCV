@@ -24,7 +24,7 @@ export function Footer() {
             <div key={item.name} className="px-5 py-2">
               <a
                 href={item.href}
-                className="text-base text-gray-500 hover:text-gray-900"
+                className="text-base text-gray-500"
               >
                 {item.name}
               </a>
@@ -32,7 +32,7 @@ export function Footer() {
           ))}
         </nav>
         <p className="mt-8 text-center text-base text-gray-400">
-          &copy; 2020 Your Company, Inc. All rights reserved.
+          © 2022 Made with️ ❤️ ImranBaitham, All rights reserved.
         </p>
       </div>
     </footer>

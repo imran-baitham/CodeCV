@@ -44,8 +44,8 @@ export function Header() {
 
   return (
     <>
-      <header className="header fixed top-0 left-0 right-0 shadow-lg">
-        <nav className="flex items-center justify-between h-16 container_main">
+      <header className="header fixed top-0 left-0 right-0 shadow-lg dark:bg-zinc-800 bg-white">
+        <nav className="flex items-center justify-between h-20 container_main">
           <h1 className="font-bold text-2xl text-yellow-500"> Welcome </h1>
 
           <div className="flex items-center justify-between w-[120px]">
@@ -96,7 +96,7 @@ export function Header() {
           </div>
         </nav>
         {isOpen && <SearchBar isOpen={isOpen} setIsOpen={setIsOpen} />}
-        <div className="h-1 fixed right-0 left-0 top-16 dark:bg-zinc-700 bg-gray-300">
+        <div className="h-1 fixed right-0 left-0 top-0 dark:bg-zinc-700 bg-gray-300">
           <div className="myBar bg-yellow-500 h-1"></div>
         </div>
       </header>
