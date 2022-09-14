@@ -1,6 +1,7 @@
 import type { NextPage } from "next";
 import { useTheme } from "next-themes";
 import Head from "next/head";
+import Index from "./blogs/Index";
 
 const Home: NextPage = () => {
   const { theme, setTheme } = useTheme();
@@ -14,18 +15,8 @@ const Home: NextPage = () => {
       </Head>
 
       <main className="w-full dark:bg-zinc-800 bg-white">
-        <div className="h-screen flex items-center justify-center">
-          <div>
-            <h1 className="text-xl font-bold dark:text-white pb-8">
-              Welcome to <a href="#">Next.js!</a>
-            </h1>
-            <button
-              className="dark:bg-white dark:text-black border bg-black py-3 px-20 text-white"
-              onClick={() => setTheme(theme === "light" ? "dark" : "light")}
-            >
-              {theme === "light" ? "Dark" : "Light"}
-            </button>
-          </div>
+        <div className="pt-32">
+          <Index />
         </div>
       </main>
     </div>
