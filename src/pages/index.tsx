@@ -1,10 +1,9 @@
 import type { NextPage } from "next";
-import { useTheme } from "next-themes";
 import Head from "next/head";
+import Pipeline from "../components/Pipeline/Pipeline";
 import Index from "./blogs/Index";
 
 const Home: NextPage = () => {
-  const { theme, setTheme } = useTheme();
 
   return (
     <div>
@@ -16,7 +15,16 @@ const Home: NextPage = () => {
 
       <main className="w-full dark:bg-zinc-800 bg-white">
         <div className="pt-32">
+          <div className="w-full flex justify-center mb-[80px]">
+            <div className="text-center">
+              <h1 className="font-bold text-4xl leading-[100px]">Hi 👋🏼, I'm</h1>
+              <h1 className="font-bold text-4xl underline underline-offset-[15px]">
+                Full Stack Developer
+              </h1>
+            </div>
+          </div>
           <Index />
+          <Pipeline />
         </div>
       </main>
     </div>
