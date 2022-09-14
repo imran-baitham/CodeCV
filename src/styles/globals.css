@@ -5,25 +5,25 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
 
 * {
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
 
 html {
-    scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
 
 body {
-    font-family: "Poppins", sans-serif;
-    transition: all 0.4s;
+  font-family: "Poppins", sans-serif;
+  transition: all 0.4s;
 }
 
 .container_main {
-    max-width: 1080px;
-    padding-left: 1rem;
-    padding-right: 1rem;
-    margin: 0% auto;
+  max-width: 1080px;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  margin: 0% auto;
 }
 
 /* ================================================================================================================ */
