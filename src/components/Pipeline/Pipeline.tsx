@@ -21,7 +21,7 @@ const navigation = {
       id: 4,
       name: "Express Js",
       href: "#",
-      class: "bg-red-400 text-white",
+      class: "bg-gradient-to-r from-purple-500 to-pink-500",
     },
     {
       id: 5,

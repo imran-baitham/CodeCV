@@ -1,4 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
+import { useRouter } from "next/router";
 import React, { useState } from "react";
 import { DemoData } from "./data";
 
@@ -12,12 +13,11 @@ function Index() {
   const [data, setData] = useState(DemoData);
   const [visible, setVisible] = useState(3);
 
+  let router = useRouter();
+  data.length >= visible ? "" : router.push("/blogs");
+
   const handleload = () => {
     setVisible((prev) => prev + 3);
-    data.length === 0 && "none";
-    if (data.length >= visible) {
-      document.body.style.background = "";
-    }
   };
 
   return (
