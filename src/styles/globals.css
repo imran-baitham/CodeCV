@@ -25,3 +25,18 @@ body {
   padding-right: 1rem;
   margin: 0% auto;
 }
+
+.container_div {
+  max-width: 1280px;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  margin: 0% auto;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: yellow !important;
+}
+
+.swiper-pagination-bullet {
+  background-color: yellow !important;
+}

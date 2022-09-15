@@ -7,3 +7,4 @@ export * from "./Footer/Footer";
 export * from "./Docs/Docs";
 export * from "../components/Button/Button";
 export * from "../components/Article/Article";
+export * from "./Slider/Slider";

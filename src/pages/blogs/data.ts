@@ -11,6 +11,7 @@ export let DemoData = [
     view: Math.floor(Math.random() * 500),
     date: "Thus 15th September",
     createdAt: new Date(),
+    slug: "What-books-you-offer",
   },
   {
     id: 2,
@@ -22,6 +23,7 @@ export let DemoData = [
     view: Math.floor(Math.random() * 500),
     date: "Thus 15th September",
     createdAt: new Date(),
+    slug: "What-booker",
   },
   {
     id: 3,
@@ -33,6 +35,7 @@ export let DemoData = [
     view: Math.floor(Math.random() * 500),
     date: "Thus 15th September",
     createdAt: new Date(),
+    slug: "What-app",
   },
   {
     id: 4,
@@ -44,6 +47,7 @@ export let DemoData = [
     view: Math.floor(Math.random() * 500),
     date: "Thus 15th September",
     createdAt: new Date(),
+    slug: "What-books",
   },
   {
     id: 5,
@@ -55,6 +59,7 @@ export let DemoData = [
     view: Math.floor(Math.random() * 500),
     date: "Thus 15th September",
     createdAt: new Date(),
+    slug: "What-books",
   },
   {
     id: 6,
@@ -66,6 +71,7 @@ export let DemoData = [
     view: Math.floor(Math.random() * 500),
     date: "Thus 15th September",
     createdAt: new Date(),
+    slug: "What-books-you",
   },
   {
     id: 7,
@@ -77,6 +83,7 @@ export let DemoData = [
     view: Math.floor(Math.random() * 500),
     date: "Thus 15th September",
     createdAt: new Date(),
+    slug: "What-books-you-should",
   },
   {
     id: 8,
@@ -88,6 +95,7 @@ export let DemoData = [
     view: Math.floor(Math.random() * 500),
     date: "Thus 15th September",
     createdAt: new Date(),
+    slug: "What-books-you-should-read",
   },
   {
     id: 9,
@@ -99,6 +107,7 @@ export let DemoData = [
     view: Math.floor(Math.random() * 500),
     date: "Thus 15th September",
     createdAt: new Date(),
+    slug: "What-books-you-should-read-in",
   },
 ];
 
