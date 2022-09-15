@@ -1,4 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
+import Link from "next/link";
 import React, { useState } from "react";
 import { Button } from "../../components";
 import { DemoData } from "./data";
@@ -18,7 +19,7 @@ function Index() {
   const handleload = () => {
     setVisible((prev) => prev + 3);
   };
-
+  
   return (
     <div className="dark:bg-zinc-800 bg-white">
       <div className="container_main">
@@ -35,6 +36,7 @@ function Index() {
                   imageUrl: any;
                   date: string;
                   view: number;
+                  slug: string;
                 }) => {
                   return (
                     <div
@@ -61,7 +63,9 @@ function Index() {
                         </p>
                       </div>
                       <div className="p-3 dark:text-yellow-300 text-yellow-600 justify-between items-center flex">
-                        <a href="#">😍 Read article</a>
+                        <Link href={`/blogs/${[x.slug]}`} passHref>
+                          <a href="">😍 Read article</a>
+                        </Link>
                         <a
                           href="#"
                           className="dark:text-white text-black text-[12px] "
