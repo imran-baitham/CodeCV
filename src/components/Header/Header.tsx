@@ -44,11 +44,14 @@ export function Header() {
   }
 
   return (
-    <>
-      <header className="header fixed top-0 left-0 right-0 shadow-lg dark:bg-zinc-800 bg-white z-20">
+    <div className="pb-32 dark:bg-zinc-800 bg-white">
+      <header className="header fixed top-0 left-0 right-0 shadow-lg z-20 dark:bg-zinc-800 bg-white">
         <nav className="flex items-center justify-between h-20 container_main">
           <Link href={"/"}>
-            <h1 className="cursor-pointer font-bold text-2xl text-yellow-500"> Welcome </h1>
+            <h1 className="cursor-pointer font-bold text-2xl text-yellow-500">
+              {" "}
+              Welcome{" "}
+            </h1>
           </Link>
 
           <div className="flex items-center justify-between w-[120px]">
@@ -103,6 +106,6 @@ export function Header() {
           <div className="myBar bg-yellow-500 h-1"></div>
         </div>
       </header>
-    </>
+    </div>
   );
 }
