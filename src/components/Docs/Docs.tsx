@@ -13,6 +13,7 @@ export function Docs() {
               loop: true,
               delay: 40,
               strings: [
+                "Imran Baitham",
                 "Full Stack Developer",
                 "Front End Developer",
                 "Back End Developer",
