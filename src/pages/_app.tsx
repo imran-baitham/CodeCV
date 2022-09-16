@@ -3,6 +3,7 @@ import type { AppProps } from "next/app";
 import { ThemeProvider } from "next-themes";
 import { useEffect, useState } from "react";
 import { Header, Footer } from "../components";
+import NextNProgress from "nextjs-progressbar";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
