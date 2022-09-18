@@ -3,7 +3,7 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import React, { useState } from "react";
 import { Button } from "../../components";
-import { DemoData } from "../../pages/blogs/data";
+import { DemoData } from "../../mocks/mocks";
 
 export interface DataProps {
   id?: number;
@@ -28,7 +28,7 @@ export function Article() {
     <div className="dark:bg-zinc-800 bg-white">
       <div className="container_main">
         <h1 className="text-yellow-400 font-bold text-4xl">Letest Article</h1>
-        <div className="py-8">
+        <div className="py-8 px-1">
           <div className="grid gap-3 lg:m-0 grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3">
             {ConvertData?.slice(0, visible).map(
               (x: {

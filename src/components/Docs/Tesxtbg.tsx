@@ -2,24 +2,26 @@ import React, { useEffect } from "react";
 import Parallax from "parallax-js";
 import PropTypes from "prop-types";
 
-import laptop from "../../public/laptop.png";
+import laptop from "../../public/World.png";
+import Google from "../../public/google.png";
+import GitHub from "../../public/githubstar.png";
 
 const layers = [
-  //   {
-  //     name: "text",
-  //     image: textImage,
-  //     dataDepth: "0.1",
-  //   },
+  {
+    name: "text",
+    image: laptop,
+    dataDepth: "0.1",
+  },
   {
     name: "astronaut",
     image: laptop,
     dataDepth: "2",
   },
-  //   {
-  //     name: "planet1",
-  //     image: planet1Image,
-  //     dataDepth: "1",
-  //   },
+  {
+    name: "planet1",
+    image: laptop,
+    dataDepth: "1",
+  },
   //   {
   //     name: "planet2",
   //     image: planet2Image,
@@ -39,7 +41,7 @@ const ParallaxImagesContainer = ({ layers }: any) => {
   });
 
   return (
-    <div className="flex w-auto h-auto justify-center">
+    <div className="flex w-auto h-[400px] justify-center">
       <div id="scene">
         {layers.map(
           (
@@ -52,7 +54,7 @@ const ParallaxImagesContainer = ({ layers }: any) => {
           ) => (
             // eslint-disable-next-line @next/next/no-img-element
             <img
-              className="h-[400px] overflow-visible"
+              className="h-[250px] lg:h-[350px] overflow-visible animate rotate-xl animate animation-delay-4000"
               key={index}
               data-depth={l.dataDepth}
               src={l.image.src}

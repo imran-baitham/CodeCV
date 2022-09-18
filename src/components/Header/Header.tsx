@@ -4,6 +4,7 @@ import { Fragment } from "react";
 import { Menu, Transition } from "@headlessui/react";
 import { ReactIcon, SearchBar, classNames } from "../index";
 import Link from "next/link";
+import { PrograssBar } from "../index";
 
 export const userNotifaction = [
   {
@@ -28,29 +29,13 @@ export const userNotifaction = [
 export function Header() {
   const [isOpen, setIsOpen] = useState(false);
 
-  window.onscroll = function () {
-    myFunction();
-  };
-
-  function myFunction() {
-    let winScroll =
-      document.body.scrollTop || document.documentElement.scrollTop;
-    let height =
-      document.documentElement.scrollHeight -
-      document.documentElement.clientHeight;
-    let scrolled = (winScroll / height) * 100;
-    let elm = document.querySelector<HTMLElement>(".myBar")!;
-    elm.style.width = scrolled + "%";
-  }
-
   return (
     <div className="pb-32 dark:bg-zinc-800 bg-white">
       <header className="header fixed top-0 left-0 right-0 shadow-lg z-20 dark:bg-zinc-800 bg-white">
         <nav className="flex items-center justify-between h-20 container_main">
           <Link href={"/"}>
             <h1 className="cursor-pointer font-bold text-2xl text-yellow-500">
-              {" "}
-              Welcome{" "}
+              Welcome
             </h1>
           </Link>
 
@@ -102,9 +87,7 @@ export function Header() {
           </div>
         </nav>
         {isOpen && <SearchBar isOpen={isOpen} setIsOpen={setIsOpen} />}
-        <div className="h-1 fixed right-0 left-0 top-0 dark:bg-zinc-700 bg-gray-300">
-          <div className="myBar bg-yellow-500 h-1"></div>
-        </div>
+        <PrograssBar />
       </header>
     </div>
   );
