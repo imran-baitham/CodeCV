@@ -30,7 +30,7 @@ export function Header() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="pb-32 dark:bg-zinc-800 bg-white">
+    <div className="mb-[70px] dark:bg-zinc-800 bg-white">
       <header className="header fixed top-0 left-0 right-0 shadow-lg z-20 dark:bg-zinc-800 bg-white">
         <nav className="flex items-center justify-between h-20 container_main">
           <Link href={"/"}>
