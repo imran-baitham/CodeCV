@@ -64,3 +64,9 @@ export { RiSunFill } from "@react-icons/all-files/ri/RiSunFill";
 export { RiMoonFill } from "@react-icons/all-files/ri/RiMoonFill";
 export { RiNotification3Fill } from "@react-icons/all-files/ri/RiNotification3Fill";
 export { RiSearchFill } from "@react-icons/all-files/ri/RiSearchFill";
+// ===============  { Social Icons }  =================
+export { RiFacebookBoxFill } from "@react-icons/all-files/ri/RiFacebookBoxFill";
+export { RiTwitterFill } from "@react-icons/all-files/ri/RiTwitterFill";
+export { RiInstagramFill } from "@react-icons/all-files/ri/RiInstagramFill";
+export { RiLinkedinBoxFill } from "@react-icons/all-files/ri/RiLinkedinBoxFill";
+export { RiYoutubeFill } from "@react-icons/all-files/ri/RiYoutubeFill";

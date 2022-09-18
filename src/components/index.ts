@@ -8,3 +8,7 @@ export * from "./Docs/Docs";
 export * from "../components/Button/Button";
 export * from "../components/Article/Article";
 export * from "./Slider/Slider";
+export * from "../components/ProgressBar/PrograssBar";
+export * from "../components/CourseCard/CourseCard";
+export * from "../components/CourseCard/DivCourse";
+export * from "../components/Subscribe/Subscribe";

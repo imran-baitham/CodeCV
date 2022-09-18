@@ -2,7 +2,8 @@ import { useTheme } from "next-themes";
 import { Prism } from "@mantine/prism";
 import { useRouter } from "next/router";
 import React, { useState } from "react";
-import { DemoData } from "./data";
+import { DemoData } from "./../../mocks/mocks";
+import { CourseCard } from "../../components";
 
 function blogsView() {
   // eslint-disable-next-line react-hooks/rules-of-hooks
@@ -32,8 +33,8 @@ function blogsView() {
   `;
   return (
     <div className="dark:bg-zinc-800 bg-white">
-      <div className="container_div md:flex justify-between">
-        <div className="md:w-3/4 shadow-xl dark:bg-zinc-700">
+      <div className="container_main pb-10">
+        <div className="shadow-xl dark:bg-zinc-700">
           <img src={blogs?.imageUrl.src} alt="" />
           <div className="py-7 px-5 bg-gradient-to-r from-purple-500 to-pink-500">
             <h2 className="font-bold text-4xl">{blogs?.title}</h2>
@@ -61,12 +62,8 @@ function blogsView() {
             <br />
           </div>
         </div>
-        <div className="hidden md:block md:w-[400px] p-3">
-          <div className="h-[400px] p-5 shadow-md dark:bg-zinc-700">
-            <h1>part second</h1>
-          </div>
-        </div>
       </div>
+      <CourseCard />
     </div>
   );
 }

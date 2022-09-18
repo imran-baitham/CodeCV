@@ -1,9 +1,11 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import Pipeline from "../components/Pipeline/Pipeline";
-import { Docs } from "../components";
+import { CourseCard, Docs } from "../components";
 import { Article } from "../components/Article/Article";
 import Slider from "../components/Slider/Slider";
+import DivCourse from "../components/CourseCard/DivCourse";
+import Subscribe from "../components/Subscribe/Subscribe";
 
 const Home: NextPage = () => {
   return (
@@ -15,11 +17,14 @@ const Home: NextPage = () => {
       </Head>
 
       <main className="w-full dark:bg-zinc-800 bg-white">
-        <div className="pt-32">
+        <div className="pt-10 md:pt-24">
           <Docs />
           <Article />
           <Pipeline />
-          <Slider />
+          {/* <Slider /> */}
+          <CourseCard />
+          <DivCourse />
+          <Subscribe />
         </div>
       </main>
     </div>

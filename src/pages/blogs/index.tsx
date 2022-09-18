@@ -1,8 +1,9 @@
+/* eslint-disable react/jsx-key */
 /* eslint-disable @next/next/no-img-element */
 import Link from "next/link";
 import React, { useState } from "react";
 import { Button } from "../../components";
-import { DemoData } from "./data";
+import { DemoData } from "../../mocks/mocks";
 
 export interface DataProps {
   id?: number;
@@ -19,11 +20,32 @@ function Index() {
   const handleload = () => {
     setVisible((prev) => prev + 3);
   };
-  
+  let btn = [
+    { id: 1, name: "All categories", href: "#" },
+    { id: 2, name: "Courses", href: "#" },
+    { id: 3, name: "WordPress", href: "#" },
+    { id: 4, name: "Css3 Themes", href: "#" },
+    { id: 4, name: "Themes", href: "#" },
+    { id: 5, name: "eCommerce", href: "#" },
+    { id: 6, name: "Blogging", href: "#" },
+    { id: 7, name: "Site Templetes", href: "#" },
+    { id: 8, name: "Jamstack", href: "#" },
+    { id: 9, name: "Marketing", href: "#" },
+    { id: 10, name: "ui Templetes", href: "#" },
+  ];
   return (
     <div className="dark:bg-zinc-800 bg-white">
       <div className="container_main">
         <h1 className="text-yellow-400 font-bold text-4xl">Letest Article</h1>
+        <div className="flex-1 bg-red-0">
+          {btn.map((x) => {
+            return (
+              <button className="border-2 border-yellow-900 py-4 px-14 m-[5px]">
+                {x.name}
+              </button>
+            );
+          })}
+        </div>
         <div className="py-8">
           <div className="grid gap-3 lg:m-0 grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3">
             {data
