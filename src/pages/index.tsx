@@ -6,13 +6,12 @@ import { Article } from "../components/Article/Article";
 import Slider from "../components/Slider/Slider";
 import DivCourse from "../components/CourseCard/DivCourse";
 import Subscribe from "../components/Subscribe/Subscribe";
-import Accordion from "../components/Questions/Accordion";
 import AccordionTest from "../components/Accordion/Accordion";
 
 const Home: NextPage = () => {
   const accordionItems = [
     {
-      title: "Accordion Item #1",
+      title: "What is WebThone",
       content: (
         <div>
           <strong>This is the first item's accordion body.</strong> It is hidden
@@ -23,21 +22,32 @@ const Home: NextPage = () => {
       ),
     },
     {
-      title: "Accordion Item #2",
+      title: "What is WebThone",
       content: (
         <div>
-          <strong>This is the second item's accordion body.</strong> It is
-          hidden by default, but shown when title is clicked. It will also be
-          hidden if the title is clicked again or when another item is clicked.
-          You can pass HTML tags in the content such as <u>underline tag</u>,{" "}
+          <strong>This is the first item's accordion body.</strong> It is hidden
+          by default, but shown when title is clicked. It will also be hidden if
+          the title is clicked again or when another item is clicked. You can
+          pass HTML tags in the content such as <u>underline tag</u>,{" "}
         </div>
       ),
     },
     {
-      title: "Accordion Item #3",
+      title: "What is WebThone",
       content: (
         <div>
-          <strong>This is the third item's accordion body.</strong> It is hidden
+          <strong>This is the first item's accordion body.</strong> It is hidden
+          by default, but shown when title is clicked. It will also be hidden if
+          the title is clicked again or when another item is clicked. You can
+          pass HTML tags in the content such as <u>underline tag</u>,{" "}
+        </div>
+      ),
+    },
+    {
+      title: "What is WebThone",
+      content: (
+        <div>
+          <strong>This is the first item's accordion body.</strong> It is hidden
           by default, but shown when title is clicked. It will also be hidden if
           the title is clicked again or when another item is clicked. You can
           pass HTML tags in the content such as <u>underline tag</u>,{" "}
@@ -56,13 +66,17 @@ const Home: NextPage = () => {
 
       <main className="w-full dark:bg-zinc-800 bg-white">
         <div className="pt-10 md:pt-24">
-          <AccordionTest items={accordionItems} />
           <Docs />
-          <Accordion />
           <Article />
           <Pipeline />
           <Slider />
           <CourseCard />
+          <div className="container_main py-20">
+            <h1 className="text-yellow-400 font-bold text-4xl text-center">
+              Some Common Questions
+            </h1>
+            <AccordionTest items={accordionItems} />
+          </div>
           <DivCourse />
           <Subscribe />
         </div>

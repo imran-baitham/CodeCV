@@ -21,9 +21,12 @@ function DivCourse() {
                 className="m-auto"
               />
               <Link href={"/"}>
-                <div className="p-3 cursor-pointer h-[50px] flex items-center justify-between dark:bg-zinc-600 bg-gray-200 border-l-4 dark:border-yellow-700 border-black">
+                <div className="group p-3 cursor-pointer h-[50px] flex items-center justify-between dark:bg-zinc-600 bg-gray-200 border-l-4 dark:border-yellow-700 border-black">
                   <h1 className="font-bold text-xl">{data.title}</h1>
-                  <ReactIcon icon="FaArrowLeft" className="rotate-[180deg]" />
+                  <ReactIcon
+                    icon="FaArrowLeft"
+                    className="rotate-[180deg] group-hover:animate-pulse"
+                  />
                 </div>
               </Link>
             </div>

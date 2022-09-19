@@ -9,18 +9,16 @@ function AccordionTest({ items }: { items: Array<AccordionData> }) {
   };
 
   return (
-    <div className="container_main">
-      <ul className="w-5/6 m-auto">
-        {items.map((item, idx) => (
-          <AccordionItem
-            key={idx}
-            data={item}
-            isOpen={idx === currentIdx}
-            btnOnClick={() => btnOnClick(idx)}
-          />
-        ))}
-      </ul>
-    </div>
+    <ul className="m-auto py-5">
+      {items.map((item, idx) => (
+        <AccordionItem
+          key={idx}
+          data={item}
+          isOpen={idx === currentIdx}
+          btnOnClick={() => btnOnClick(idx)}
+        />
+      ))}
+    </ul>
   );
 }
 
