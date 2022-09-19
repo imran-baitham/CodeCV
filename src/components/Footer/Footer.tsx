@@ -1,5 +1,6 @@
 /* eslint-disable react/jsx-key */
-import ReactIcon from "../ReactIcon/ReactIcon";
+import Link from "next/link";
+import { ReactIcon } from "../index";
 
 const navigation = {
   solutions: [
@@ -17,7 +18,7 @@ const navigation = {
   company: [
     { name: "About", href: "#" },
     { name: "Blog", href: "#" },
-    { name: "Jobs", href: "#" },
+    { name: "Jobs", href: "/contact" },
     { name: "Press", href: "#" },
   ],
   legal: [
@@ -87,13 +88,11 @@ export function Footer() {
                   <h3 className="text-lg font-semibold">Company</h3>
                   <ul role="list" className="mt-4 space-y-4">
                     {navigation.company.map((item) => (
-                      <li key={item.name}>
-                        <a
-                          href={item.href}
-                          className="text-base dark:text-gray-300 text-gray-600 dark:hover:text-gray-200 hover:text-black"
-                        >
-                          {item.name}
-                        </a>
+                      <li
+                        key={item.name}
+                        className="text-base dark:text-gray-300 text-gray-600 dark:hover:text-gray-200 hover:text-black"
+                      >
+                        <Link href={item.href}>{item.name}</Link>
                       </li>
                     ))}
                   </ul>

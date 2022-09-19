@@ -6,8 +6,56 @@ import { Article } from "../components/Article/Article";
 import Slider from "../components/Slider/Slider";
 import DivCourse from "../components/CourseCard/DivCourse";
 import Subscribe from "../components/Subscribe/Subscribe";
+import AccordionTest from "../components/Accordion/Accordion";
 
 const Home: NextPage = () => {
+  const accordionItems = [
+    {
+      title: "What is WebThone",
+      content: (
+        <div>
+          <strong>This is the first item's accordion body.</strong> It is hidden
+          by default, but shown when title is clicked. It will also be hidden if
+          the title is clicked again or when another item is clicked. You can
+          pass HTML tags in the content such as <u>underline tag</u>,{" "}
+        </div>
+      ),
+    },
+    {
+      title: "What is WebThone",
+      content: (
+        <div>
+          <strong>This is the first item's accordion body.</strong> It is hidden
+          by default, but shown when title is clicked. It will also be hidden if
+          the title is clicked again or when another item is clicked. You can
+          pass HTML tags in the content such as <u>underline tag</u>,{" "}
+        </div>
+      ),
+    },
+    {
+      title: "What is WebThone",
+      content: (
+        <div>
+          <strong>This is the first item's accordion body.</strong> It is hidden
+          by default, but shown when title is clicked. It will also be hidden if
+          the title is clicked again or when another item is clicked. You can
+          pass HTML tags in the content such as <u>underline tag</u>,{" "}
+        </div>
+      ),
+    },
+    {
+      title: "What is WebThone",
+      content: (
+        <div>
+          <strong>This is the first item's accordion body.</strong> It is hidden
+          by default, but shown when title is clicked. It will also be hidden if
+          the title is clicked again or when another item is clicked. You can
+          pass HTML tags in the content such as <u>underline tag</u>,{" "}
+        </div>
+      ),
+    },
+  ];
+
   return (
     <div className="dark:bg-zinc-800 bg-white">
       <Head>
@@ -21,8 +69,14 @@ const Home: NextPage = () => {
           <Docs />
           <Article />
           <Pipeline />
-          {/* <Slider /> */}
+          <Slider />
           <CourseCard />
+          <div className="container_main py-20">
+            <h1 className="text-yellow-400 font-bold text-4xl text-center">
+              Some Common Questions
+            </h1>
+            <AccordionTest items={accordionItems} />
+          </div>
           <DivCourse />
           <Subscribe />
         </div>

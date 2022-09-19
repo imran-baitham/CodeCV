@@ -7,6 +7,12 @@ module.exports = {
   ],
   theme: {
     extend: {
+      backgroundImage: {
+        "nature-light":
+          "url('https://images.pexels.com/photos/607812/pexels-photo-607812.jpeg?auto=compress&cs=tinysrgb&w=1600')",
+        "nature-dark":
+          "url('https://images.pexels.com/photos/177707/pexels-photo-177707.jpeg?auto=compress&cs=tinysrgb&w=1600')",
+      },
       animation: {
         blob: "blob 5s linear infinite",
       },
@@ -29,7 +35,7 @@ module.exports = {
           },
         },
       },
-    }
+    },
     // fontFamily: {},
     // colors: {
     //   'yellow': "hsl(31, 100%, 70%)"

@@ -29,5 +29,3 @@ export const ReactIcon = ({
 
   return Icon ? <Icon {...props} /> : null;
 };
-
-export default ReactIcon;
