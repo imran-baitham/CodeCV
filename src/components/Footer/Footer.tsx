@@ -1,6 +1,6 @@
 /* eslint-disable react/jsx-key */
 import Link from "next/link";
-import ReactIcon from "../ReactIcon/ReactIcon";
+import { ReactIcon } from "../index";
 
 const navigation = {
   solutions: [
@@ -92,11 +92,7 @@ export function Footer() {
                         key={item.name}
                         className="text-base dark:text-gray-300 text-gray-600 dark:hover:text-gray-200 hover:text-black"
                       >
-                        <Link
-                          href={item.href}
-                        >
-                          {item.name}
-                        </Link>
+                        <Link href={item.href}>{item.name}</Link>
                       </li>
                     ))}
                   </ul>

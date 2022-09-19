@@ -70,3 +70,4 @@ export { RiTwitterFill } from "@react-icons/all-files/ri/RiTwitterFill";
 export { RiInstagramFill } from "@react-icons/all-files/ri/RiInstagramFill";
 export { RiLinkedinBoxFill } from "@react-icons/all-files/ri/RiLinkedinBoxFill";
 export { RiYoutubeFill } from "@react-icons/all-files/ri/RiYoutubeFill";
+export { FaPlus } from "@react-icons/all-files/fa/FaPlus";

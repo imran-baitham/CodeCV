@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
 import { CardData } from "../../mocks/mocks";
-import ReactIcon from "../ReactIcon/ReactIcon";
+import { ReactIcon } from "../index";
 
 function DivCourse() {
   const [Demo, setDemo] = useState(CardData);
