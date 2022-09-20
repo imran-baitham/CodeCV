@@ -89,7 +89,9 @@ export function SelectInput({
                   <div className="w-0 h-6">&nbsp;</div>
                 )}
                 <span
-                  className={classNames("ml-3 block truncate dark:text-gray-400 text-gray-400")}
+                  className={classNames(
+                    "ml-3 block truncate dark:text-gray-400 text-gray-400"
+                  )}
                 >
                   {selected["name"] as any}
                 </span>
@@ -118,7 +120,9 @@ export function SelectInput({
                     key={option.value || option.id || option.name}
                     className={({ active }) =>
                       classNames(
-                        active ? "text-white dark:bg-zinc-600 bg-gray-100" : "text-gray-900",
+                        active
+                          ? "text-white dark:bg-zinc-600 bg-gray-100"
+                          : "text-gray-900",
                         "cursor-default select-none relative py-2 pl-3 pr-9",
                         option.separator
                           ? "border-t border-gray-200 pt-2 mt-2"

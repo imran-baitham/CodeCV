@@ -14,7 +14,7 @@
 
 @layer components {
   .custom-shadow {
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5)
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
   }
 
   .w-terminal {

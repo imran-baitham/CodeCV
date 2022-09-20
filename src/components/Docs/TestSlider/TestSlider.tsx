@@ -101,7 +101,9 @@ alert("Hello World")
                         <div className="bg-yellow-500 rounded-full w-3 h-3"></div>
                         <div className="bg-green-500 rounded-full w-3 h-3"></div>
                       </div>
-                      <h1 className="dark:text-yellow-500 text-yellow-700">{x.title}</h1>
+                      <h1 className="dark:text-yellow-500 text-yellow-700">
+                        {x.title}
+                      </h1>
                     </div>
                     <div className="overflow-hidden rounded-lg">
                       <Prism
