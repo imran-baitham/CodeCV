@@ -20,7 +20,7 @@ export function CourseCard() {
   return (
     <div className="dark:bg-zinc-800 bg-white">
       <div className="container_main">
-        <h1 className="text-yellow-400 font-bold text-4xl">Letest Article</h1>
+        {/* <h1 className="text-yellow-400 font-bold text-4xl">Letest Article</h1> */}
         <div className="py-8 px-1">
           <Swiper
             slidesPerView={3}

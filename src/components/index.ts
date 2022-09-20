@@ -13,3 +13,4 @@ export * from "../components/CourseCard/CourseCard";
 export * from "../components/CourseCard/DivCourse";
 export * from "../components/Subscribe/Subscribe";
 export * from "../components/Questions/Question";
+export * from "../components/SelectInput/SelectInput";

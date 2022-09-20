@@ -1,12 +1,12 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import Pipeline from "../components/Pipeline/Pipeline";
-import { CourseCard, Docs } from "../components";
+import { CourseCard } from "../components";
 import { Article } from "../components/Article/Article";
-import Slider from "../components/Slider/Slider";
 import DivCourse from "../components/CourseCard/DivCourse";
 import Subscribe from "../components/Subscribe/Subscribe";
 import AccordionTest from "../components/Accordion/Accordion";
+import Tailwint from "../components/Docs/Tailwint/Tailwint";
 
 const Home: NextPage = () => {
   const accordionItems = [
@@ -65,11 +65,13 @@ const Home: NextPage = () => {
       </Head>
 
       <main className="w-full dark:bg-zinc-800 bg-white">
-        <div className="pt-10 md:pt-24">
-          <Docs />
+        {/* <div className="pt-10 md:pt-24"> */}
+        <div className="">
+          <Tailwint />
+          {/* <Docs /> */}
           <Article />
           <Pipeline />
-          <Slider />
+          {/* <Slider /> */}
           <CourseCard />
           <div className="container_main py-20">
             <h1 className="text-yellow-400 font-bold text-4xl text-center">

@@ -1,7 +1,7 @@
 import Image from "next/image";
 import React from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
-import { Button, ReactIcon } from "../../components";
+import { Button, ReactIcon, SelectInput } from "../../components";
 import whatsappImage from "../../public/whatsapp1.png";
 
 interface FormData {
@@ -23,6 +23,17 @@ function Index() {
   const onSubmit: SubmitHandler<FormData> = (data) => {
     console.log(data);
   };
+
+  const typeOptions = [
+    {
+      name: "message",
+      value: "trigger",
+      icon: "IoIosGitPullRequest",
+    },
+    { name: "Work together", value: "stage", icon: "FaWaveSquare" },
+    { name: "Hire Us", value: "stage", icon: "BsBarChartSteps" },
+    { name: "another", value: "stage", icon: "MdErrorOutline" },
+  ];
 
   return (
     <>
@@ -145,17 +156,14 @@ function Index() {
                       </label>
                     </div>
                     <div className="mt-1">
-                      <select className="block w-full dark:bg-zinc-700 bg-gray-100 rounded-sm border-warm-gray-300 py-3 px-4 text-warm-gray-900 shadow-sm">
-                        <option value="male">Massage</option>
-                        <option value="female">Work together</option>
-                        <option value="other">Meeting</option>
-                        <option value="other">Your Project</option>
-                      </select>
-                      {/* <input
-                        type="text"
-                        placeholder="Enter Your Phone Number"
-                        className="block w-full dark:bg-zinc-700 bg-gray-100 rounded-sm border-warm-gray-300 py-3 px-4 text-warm-gray-900 shadow-sm"
-                      /> */}
+                      <SelectInput
+                        options={typeOptions}
+                        label=""
+                        // defaultValue={typeOptions.find(
+                        //   (option) => option.value === item.type
+                        // )}
+                        // onChange={(e) => handleChange(e, item.id, "type")}
+                      />
                     </div>
                   </div>
                   <div className="sm:col-span-2">
