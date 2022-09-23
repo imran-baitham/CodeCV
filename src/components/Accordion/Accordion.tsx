@@ -9,7 +9,7 @@ function AccordionTest({ items }: { items: Array<AccordionData> }) {
   };
 
   return (
-    <ul className="m-auto py-5">
+    <ul className="m-auto">
       {items.map((item, idx) => (
         <AccordionItem
           key={idx}

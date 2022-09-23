@@ -29,7 +29,7 @@ function AccordionItem({
     <li className={`${isOpen ? "active" : ""}`}>
       <div
         onClick={btnOnClick}
-        className="m-1 flex justify-between items-center user-none py-4 px-8 dark:bg-zinc-700 bg-gray-100 cursor-pointer select-none"
+        className="mb-2 flex justify-between items-center user-none py-4 px-8 dark:bg-zinc-600 bg-gray-200 cursor-pointer select-none"
       >
         <h1 className={"font-bold text-md dark:text-white text-black"}>
           {data.title}
@@ -37,10 +37,10 @@ function AccordionItem({
         <ReactIcon icon="FaPlus" />
       </div>
 
-      <div className="accordion-item-container" style={{ height }}>
+      <div className="accordion-item-container mb-2" style={{ height }}>
         <div
           ref={contentRef}
-          className="mx-1 py-4 px-8 border-l-2 border-yellow-500 dark:bg-zinc-700 bg-gray-100 dark:text-gray-200 text-gray-600"
+          className="mx-1 py-4 px-8 border-l-2 border-yellow-500 dark:bg-zinc-600 bg-gray-200 dark:text-gray-200 text-gray-600"
         >
           {data.content}
         </div>
