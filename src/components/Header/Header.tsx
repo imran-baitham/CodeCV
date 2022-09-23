@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import React, { useState } from "react";
 import { Theme } from "../index";
 import { Fragment } from "react";
@@ -5,7 +6,7 @@ import { Menu, Transition } from "@headlessui/react";
 import { ReactIcon, SearchBar, classNames } from "../index";
 import Link from "next/link";
 import { PrograssBar } from "../index";
-// =============================================
+
 import { Popover } from "@headlessui/react";
 import {
   BookmarkSquareIcon,
@@ -127,7 +128,6 @@ export function Header() {
             </h1>
           </Link>
 
-          {/*  */}
           <Popover.Group
             as="nav"
             className="flex space-x-5 hidden md:flex items-center justify-center"

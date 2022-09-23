@@ -3,14 +3,14 @@ import React from "react";
 function Subscribe() {
   return (
     <div className="container_main pb-10">
-      <div className="lg:h-[270px] dark:bg-zinc-700 p-3">
+      <div className="lg:h-[270px] dark:bg-zinc-700 p-3 bg-gray-100">
         <div className="grid grid-cols-1 lg:grid-cols-2 p-4 md:p-[60px] lg:border lg:border-white">
           <div className="lg:w-auto">
             <h1 className="font-bold text-2xl py-2">
               Subscribe Our Newsletter
             </h1>
             <p className="font medium text-md pb-7">
-              Don't miss out on your discounts. Subscribe to our email
+              {"Don't"} miss out on your discounts. Subscribe to our email
               newsletter to get the best offers, discounts, coupons, gifts and
               much more.
             </p>

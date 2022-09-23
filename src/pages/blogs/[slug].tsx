@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 /* eslint-disable react-hooks/rules-of-hooks */
 import { useTheme } from "next-themes";
 import { Prism } from "@mantine/prism";
