@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import React from "react";
 import alpine from "../../../public/assets/alpine.png";
 import javaimage from "../../../public/assets/javascript.png";

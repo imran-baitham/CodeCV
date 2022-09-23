@@ -28,7 +28,7 @@ export const DemoData = [
         donec est. Odio penatibus risus viverra tellus varius sit neque erat
         velit. Faucibus commodo massa rhoncus, volutpat. Dignissim sed eget
         risus enim. Mattis mauris semper sed amet vitae sed turpis This is the
-        first item's accordion body. It is hidden by default, but shown when
+        first accordion body. It is hidden by default, but shown when
         title is clicked. It will also be hidden if the title is clicked again
         or when another item is clicked. You can pass HTML tags in the content
         such as underline tag,
@@ -39,7 +39,7 @@ export const DemoData = [
         title: "What is WebThone",
         content: (
           <div>
-            <strong>This is the first item's accordion body.</strong> It is
+            <strong>This is the first accordion body.</strong> It is
             hidden by default, but shown when title is clicked. It will also be
             hidden if the title is clicked again or when another item is
             clicked. You can pass HTML tags in the content such as{" "}
@@ -142,7 +142,7 @@ function Demo() {
     catagory: "tailwint",
     content: (
       <div>
-        <strong>This is the first item's accordion body.</strong> It is hidden
+        <strong>This is the first accordion body.</strong> It is hidden
         by default, but shown when title is clicked. It will also be hidden if
         the title is clicked again or when another item is clicked. You can pass
         HTML tags in the content such as <u>underline tag</u>,{" "}
@@ -174,7 +174,7 @@ function Demo() {
     catagory: "vue",
     content: (
       <div>
-        <strong>This is the first item's accordion body.</strong> It is hidden
+        <strong>This is the first accordion body.</strong> It is hidden
         by default, but shown when title is clicked. It will also be hidden if
         the title is clicked again or when another item is clicked. You can pass
         HTML tags in the content such as <u>underline tag</u>,{" "}
@@ -200,7 +200,7 @@ function Demo() {
     catagory: "angular",
     content: (
       <div>
-        <strong>This is the first item's accordion body.</strong> It is hidden
+        <strong>This is the first accordion body.</strong> It is hidden
         by default, but shown when title is clicked. It will also be hidden if
         the title is clicked again or when another item is clicked. You can pass
         HTML tags in the content such as <u>underline tag</u>.

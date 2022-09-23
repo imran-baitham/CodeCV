@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 /* eslint-disable react-hooks/rules-of-hooks */
 import Link from "next/link";
 import { useRouter } from "next/router";
@@ -37,7 +38,7 @@ export function Article() {
       </div>
     );
 
-  let ConvertData = data.slice(0, 9);
+  let ConvertData = [data]?.slice(0, 9);
 
   let router = useRouter();
   ConvertData.length >= visible ? "" : router.push("/blogs");

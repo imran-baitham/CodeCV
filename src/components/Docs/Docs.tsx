@@ -1,7 +1,7 @@
 /* eslint-disable react/jsx-key */
 import React from "react";
 import Typewriter from "typewriter-effect";
-import ParallaxImagesContainer from "./Tesxtbg";
+// import ParallaxImagesContainer from "./Tesxtbg";
 export function Docs() {
   let data = [
     { id: 1, title: "83+ million", subtitle: "Developers" },
@@ -13,7 +13,7 @@ export function Docs() {
     <div className="container_main w-full grid grid-cols-1 md:grid-cols-2 pb-[80px]">
       <div className="">
         <h1 className="font-bold text-4xl leading-[100px] hidden md:block">
-          Hi 👋🏼, I'm
+          {"Hi 👋🏼, 'm"}
         </h1>
         <h1 className="font-bold text-2xl md:text-4xl underline underline-offset-[15px] z-0">
           <Typewriter
@@ -40,15 +40,14 @@ export function Docs() {
         </h1>
         <div className="mt-10 mb-24 h-auto">
           <p className="font-medium leading-[25px]">
-            Welcome to my digital garden where I share what I'm learning about
-            shipping great products, becoming a better developer and growing a
-            career in tech.
-            {/* The complete developer platform to build, scale, and deliver secure software. */}
+            Welcome to my digital garden where I share what {"I'm"} learning
+            about shipping great products, becoming a better developer and
+            growing a career in tech.
           </p>
         </div>
       </div>
       <div className="">
-        <ParallaxImagesContainer />
+        {/* <ParallaxImagesContainer /> */}
       </div>
       <div className="grid gap-2 grid-cols-2 xl:grid-cols-4 md:w-[650px]">
         {data.map((x) => {
@@ -67,14 +66,4 @@ export function Docs() {
       </div>
     </div>
   );
-}
-
-{
-  /* <img
-          src={laptop.src}
-          alt="image laptop"
-          datatype="2"
-          className="h-[300px] object"
-        />
-      </div> */
 }

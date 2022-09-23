@@ -122,7 +122,7 @@ export function Footer() {
                 on Social Media.
               </p>
               <div className="mt-7 flex lg:items-end justify-left">
-                {LinkMedia.map((x) => {
+                {LinkMedia.map((x: any) => {
                   return (
                     <a
                       href=""

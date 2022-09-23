@@ -99,7 +99,7 @@ alert("Hello World")
               (x: {
                 id: number;
                 title: string;
-                language: Language | string;
+                language: any | string;
                 CodeLogs: any;
               }) => {
                 return (
