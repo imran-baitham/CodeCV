@@ -1,22 +1,48 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 import { useTheme } from "next-themes";
 import { Prism } from "@mantine/prism";
 import { useRouter } from "next/router";
-import React, { useState } from "react";
-import { DemoData } from "./../../mocks/mocks";
+import React, { ReactNode, useEffect, useState } from "react";
 import { CourseCard } from "../../components";
+import AccordionTest from "../../components/Accordion/Accordion";
+import { accordionItems } from "../../mocks/more";
+import { Loader } from "@mantine/core";
+import Head from "next/head";
+
+type slugProps = {
+  slug: string | string | number | any | JSX.Element | ReactNode;
+};
 
 function blogsView() {
-  // eslint-disable-next-line react-hooks/rules-of-hooks
-  const { theme, setTheme } = useTheme();
-  // eslint-disable-next-line react-hooks/rules-of-hooks
-  const [data, setData] = useState(DemoData);
-  // eslint-disable-next-line react-hooks/rules-of-hooks
+  const [data, setData] = useState(null);
+  const getData = () => fetch("/api/articles").then((res) => res.json());
+
+  useEffect(() => {
+    setTimeout(() => {
+      getData().then((product) => setData(product));
+    }, 0);
+  }, []);
+
+  if (!data)
+    return (
+      <div className="w-full py-20 dark:bg-zinc-800">
+        <div className="container_main h-screen ">
+          <div className="flex items-center justify-center">
+            <Loader />
+          </div>
+        </div>
+      </div>
+    );
+
+  const { theme } = useTheme();
+
   const router = useRouter();
   const { slug } = router.query;
-  console.log(slug, "slug test");
-  const blogs = data.find(
-    (article: { slug: string | string | number | any }) => article.slug === slug
-  );
+  const blogs = data?.find((article: slugProps) => article.slug === slug);
+
+  console.log(blogs?.content, "blogs?.Contant");
+  let contactData = JSON.stringify(blogs?.content.props.children);
+  const Contant = contactData.slice(1, -1);
 
   let CodeLogs = `
   // eslint-disable-next-line react-hooks/rules-of-hooks
@@ -31,38 +57,34 @@ function blogsView() {
   );
   const code = "Initializing Logs.";
   `;
+
   return (
     <div className="dark:bg-zinc-800 bg-white">
+      <Head>
+        <title>Coder | {blogs?.title}</title>
+        <meta name="description" content={`Learn more about ${blogs?.title}`} />
+        <meta
+          property="og:title"
+          content={`${blogs?.title} blog page website`}
+        />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
+      {blogs?.bgImageUrl && (
+        <div className="bg-red-500 h-[500px]">
+          <img
+            src={blogs?.bgImageUrl.src}
+            className={"h-[500px] w-full"}
+            alt=""
+          />
+        </div>
+      )}
+
+      {blogs?.NetlifyBlog && (
+        <div className="bg-zinc-900 h-48 flex items-center justify-center">
+          <h1 className="font-bold text-4xl">{blogs?.NetlifyBlog}</h1>
+        </div>
+      )}
       <div className="container_main pb-10 md:flex justify-between">
-        {/* <div className="shadow-xl dark:bg-zinc-700">
-          <img src={blogs?.imageUrl.src} alt="" />
-          <div className="py-7 px-5 bg-gradient-to-r from-purple-500 to-pink-500">
-            <h2 className="font-bold text-4xl">{blogs?.title}</h2>
-          </div>
-          <div className="p-5">
-            <div className="p-1">
-              <h1>{`${
-                blogs?.date.length >= 14
-                  ? blogs?.date.substring(0, 14) + "..."
-                  : "...."
-              } ${blogs?.view} views ${blogs?.likes} likes`}</h1>
-            </div>
-            <div className="py-7">
-              <h2 className="font-medium text-md">
-                {`${blogs?.subtitle} ${blogs?.subtitle} ${blogs?.subtitle} ${blogs?.subtitle} ${blogs?.subtitle} ${blogs?.subtitle} `}
-              </h2>
-            </div>
-            <Prism
-              withLineNumbers
-              colorScheme={theme === "light" ? "light" : "dark"}
-              language="tsx"
-            >
-              {CodeLogs}
-            </Prism>
-            <br />
-          </div>
-        </div> */}
-        {/* <div> */}
         <div className="lg:w-2/3 relative overflow-hidden my-10 dark:bg-zinc-700 bg-gray-100">
           <div className="bg-red-300">
             <img src={blogs?.imageUrl.src} alt="" />
@@ -73,13 +95,11 @@ function blogsView() {
                 {blogs?.title}
               </h1>
               <p className="mt-8 text-md md:text-xl leading-8 border-l-4 border-yellow-600 pl-2">
-                Aliquet nec orci mattis amet quisque ullamcorper neque, nibh
-                sem. At arcu, sit dui mi, nibh dui, diam eget aliquam. Quisque
-                id at vitae feugiat egestas ac. Diam nulla orci at in viverra
-                scelerisque eget. Eleifend egestas fringilla sapien.
+                {blogs?.description}
               </p>
             </div>
-            <div className="prose prose-lg mt-6 prose-indigo text-[15px] md:text-lg mx-auto dark:text-gray-100 text-gray-700">
+            <div className="prose prose-lg mt-6 pb-9 prose-indigo text-[15px] md:text-lg mx-auto dark:text-gray-100 text-gray-700">
+              <p className="py-10">{Contant}</p>
               <p>
                 Faucibus commodo massa rhoncus, volutpat.{" "}
                 <strong>Dignissim</strong> sed <strong>eget risus enim</strong>.
@@ -137,7 +157,7 @@ function blogsView() {
               <figure className="py-5">
                 <img
                   className="w-full rounded-lg"
-                  src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-1.2.1&auto=format&fit=facearea&w=1310&h=873&q=80&facepad=3"
+                  src={blogs?.imageUrl.src}
                   alt=""
                   width={1310}
                   height={873}
@@ -155,12 +175,30 @@ function blogsView() {
                 dui tempor dignissim. Facilisis auctor venenatis varius nunc,
                 congue erat ac. Cras fermentum convallis quam.
               </p>
+              {blogs?.code && (
+                <div className="dark:bg-black bg-gray-200 p-3 my-3">
+                  <Prism
+                    withLineNumbers
+                    colorScheme={theme === "light" ? "light" : "dark"}
+                    language="tsx"
+                  >
+                    {blogs?.code}
+                  </Prism>
+                </div>
+              )}
+
               <p>
                 Faucibus commodo massa rhoncus, volutpat. Dignissim sed eget
                 risus enim. Mattis mauris semper sed amet vitae sed turpis id.
                 Id dolor praesent donec est. Odio penatibus risus viverra tellus
                 varius sit neque erat velit.
               </p>
+              <div className="my-5">
+                <h1 className="mb-2 font-medium text-2xl">
+                  Some Common Questions
+                </h1>
+                <AccordionTest items={accordionItems} />
+              </div>
             </div>
           </div>
         </div>
@@ -169,7 +207,6 @@ function blogsView() {
             cards
           </div>
         </div>
-        {/* </div> */}
       </div>
       <CourseCard />
     </div>

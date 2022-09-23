@@ -1,9 +1,9 @@
-/* eslint-disable @next/next/no-img-element */
+/* eslint-disable react-hooks/rules-of-hooks */
 import Link from "next/link";
 import { useRouter } from "next/router";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Button } from "../../components";
-import { DemoData } from "../../mocks/mocks";
+import { ViewProjectPreloader } from "../../pages/blogs/blogsSkeleton/BlogsSkeleton";
 
 export interface DataProps {
   id?: number;
@@ -12,8 +12,30 @@ export interface DataProps {
   image?: any;
 }
 export function Article() {
-  const [data, setData] = useState(DemoData);
-  const [visible, setVisible] = useState(3);
+  const [data, setData] = useState(null);
+  const [visible, setVisible] = useState(6);
+  console.log(data, "api data");
+  const getData = () => fetch("/api/articles").then((res) => res.json());
+
+  useEffect(() => {
+    setTimeout(() => {
+      getData().then((product) => setData(product));
+    }, 0);
+  }, []);
+
+  if (!data)
+    return (
+      <div className="w-full py-20">
+        <div className="container_main">
+          <ul
+            role="list"
+            className="w-full grid grid-cols-1 gap-3 sm:grid-cols-2 md:grid-cols-3"
+          >
+            <ViewProjectPreloader />
+          </ul>
+        </div>
+      </div>
+    );
 
   let ConvertData = data.slice(0, 9);
 
@@ -29,7 +51,7 @@ export function Article() {
       <div className="container_main">
         <h1 className="text-yellow-400 font-bold text-4xl">Letest Article</h1>
         <div className="py-8 px-1">
-          <div className="grid gap-3 lg:m-0 grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3">
+          <div className="grid gap-3 lg:m-0 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
             {ConvertData?.slice(0, visible).map(
               (x: {
                 id: number;

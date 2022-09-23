@@ -42,7 +42,9 @@ function Index() {
         <div className="w-full z-10 h-[370px] bg-[rgba(0,0,0,0.7)] absolute flex items-center">
           <div className="container_main w-full">
             <div className="md:w-1/2">
-              <h1 className="font-bold text-5xl text-gray-100">OUR CONTACTS</h1>
+              <h1 className="font-bold text-4xl text-gray-100 font-['Nosifer']">
+                OUR CONTACTS
+              </h1>
               <p className="py-2 text-gray-200">
                 We’d love to hear from you! Send us a message using the form
                 opposite, or email us. We’d love to hear from you! Send us a

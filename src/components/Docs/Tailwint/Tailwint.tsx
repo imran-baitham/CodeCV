@@ -13,10 +13,10 @@ import TestSlider from "../TestSlider/TestSlider";
 function Tailwint() {
   return (
     <div className="pr-[1rem] overflow-hidden">
-      <div className="py-20 container_div overflow-visible w-full h-screen md:h-[700px] dark:bg-zinc-800 md:flex flex-col-reverse md:flex-row justify-center items-center overflow-hidden">
+      <div className="py-20 container_div overflow-visible w-full h-screen md:h-[780px] dark:bg-zinc-800 md:flex flex-col-reverse md:flex-row justify-center items-center overflow-hidden">
         <TestSlider />
 
-        <div className="w-full md:w-1/2 flex justify-center items-center transform scale-75 md:scale-125 translate-x-0 md:translate-x-40 translate-y-20 md:-translate-y-8 hidden md:flex">
+        <div className="w-full md:w-1/2 flex justify-center items-center transform scale-75 md:scale-125 translate-x-0 md:translate-x-40 translate-y-20 md:translate-y-2 hidden md:flex">
           <img
             className="w-80 h-80 rounded-full border-4 border-white custom-shadow"
             src={bgimage.src}
