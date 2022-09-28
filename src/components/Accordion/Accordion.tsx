@@ -1,8 +1,8 @@
 import { useState } from "react";
-import { AccordionData } from "./types";
+import { AccordionData } from "../../Utils/accordionTypes";
 import AccordionItem from "./AccordionItem";
 
-function AccordionTest({ items }: { items: Array<AccordionData> }) {
+function Accordions({ items }: { items: Array<AccordionData> }) {
   const [currentIdx, setCurrentIdx] = useState(-1);
   const btnOnClick = (idx: number) => {
     setCurrentIdx((currentValue) => (currentValue !== idx ? idx : -1));
@@ -22,4 +22,4 @@ function AccordionTest({ items }: { items: Array<AccordionData> }) {
   );
 }
 
-export default AccordionTest;
+export default Accordions;

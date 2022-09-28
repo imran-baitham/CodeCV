@@ -4,18 +4,15 @@ import { useTheme } from "next-themes";
 import { Prism } from "@mantine/prism";
 import { useRouter } from "next/router";
 import React, { ReactNode, useEffect, useState } from "react";
-import { CourseCard } from "../../components";
-import AccordionTest from "../../components/Accordion/Accordion";
-import { accordionItems } from "../../mocks/more";
+import { CourseCard, ReactIcon } from "../../components";
+import { accordionItems } from "../../Trash/accordionList";
 import { Loader } from "@mantine/core";
 import Head from "next/head";
+import Accordions from "../../components/Accordion/Accordion";
+import { BlogsDataProps } from "../../Utils/blogsTypes";
 
-type slugProps = {
-  slug: string | string | number | any | JSX.Element | ReactNode;
-};
-
-function blogsView() {
-  const [data, setData] = useState(null);
+const blogsView = () => {
+  const [data, setData] = useState<BlogsDataProps | any>(null);
   const getData = () => fetch("/api/articles").then((res) => res.json());
 
   useEffect(() => {
@@ -39,24 +36,16 @@ function blogsView() {
 
   const router = useRouter();
   const { slug } = router.query;
-  const blogs = data?.find((article: slugProps) => article.slug === slug);
+  const blogs = data?.find((article: BlogsDataProps) => article.slug === slug);
 
-  console.log(blogs?.content, "blogs?.Contant");
-  let contactData = JSON.stringify(blogs?.content.props.children);
-  const Contant = contactData.slice(1, -1);
+  // var jsonData = JSON.stringify(blogs.description)
 
   let CodeLogs = `
-  // eslint-disable-next-line react-hooks/rules-of-hooks
-  const [data, setData] = useState(DemoData);
-  console.warn(data, "data api");
-  // eslint-disable-next-line react-hooks/rules-of-hooks
-  const router = useRouter();
-  const { slug } = router.query;
-  console.log(slug, "slug test");
-  const blogs = data.find(
-    (article: { slug: string | string | number | any }) => article.slug === slug
-  );
-  const code = "Initializing Logs.";
+
+  // asdfasdf
+  console
+  // asdfasdfasdf
+
   `;
 
   return (
@@ -70,7 +59,8 @@ function blogsView() {
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      {blogs?.bgImageUrl && (
+
+      {/* {blogs?.bgImageUrl && (
         <div className="bg-red-500 h-[500px]">
           <img
             src={blogs?.bgImageUrl.src}
@@ -84,7 +74,7 @@ function blogsView() {
         <div className="bg-zinc-900 h-48 flex items-center justify-center">
           <h1 className="font-bold text-4xl">{blogs?.NetlifyBlog}</h1>
         </div>
-      )}
+      )} */}
       <div className="container_main pb-10 md:flex justify-between">
         <div className="lg:w-2/3 relative overflow-hidden my-10 dark:bg-zinc-700 bg-gray-100">
           <div className="bg-red-300">
@@ -96,11 +86,11 @@ function blogsView() {
                 {blogs?.title}
               </h1>
               <p className="mt-8 text-md md:text-xl leading-8 border-l-4 border-yellow-600 pl-2">
-                {blogs?.description}
+                {blogs?.subtitle}
               </p>
             </div>
-            <div className="prose prose-lg mt-6 pb-9 prose-indigo text-[15px] md:text-lg mx-auto dark:text-gray-100 text-gray-700">
-              <p className="py-10">{Contant}</p>
+            <div className="prose prose-lg mt-6 pb-5 prose-indigo text-[15px] md:text-lg mx-auto dark:text-gray-100 text-gray-700">
+              <p className="py-8">{JSON.stringify(blogs.description)}</p>
               <p>
                 Faucibus commodo massa rhoncus, volutpat.{" "}
                 <strong>Dignissim</strong> sed <strong>eget risus enim</strong>.
@@ -194,24 +184,63 @@ function blogsView() {
                 Id dolor praesent donec est. Odio penatibus risus viverra tellus
                 varius sit neque erat velit.
               </p>
-              <div className="my-5">
+              <div className="my-7 border-l-2 border-yellow-500 pl-3">
+                <h1 className="font-medium text-xl font-bold">GitHub</h1>
+                <hr className="border border-zinc-600 my-2" />
+                <a href="" className="text-sm text-blue-400">
+                  https://google.com.pk
+                </a>
+                <h1 className="font-medium text-xl font-bold mt-4">
+                  Live Preview
+                </h1>
+                <hr className="border border-zinc-600 my-2" />
+                <a href="" className="text-sm text-blue-400">
+                  https://google.com.pk
+                </a>
+                <h1 className="font-medium text-xl font-bold mt-4">
+                  CodeSandbox
+                </h1>
+                <hr className="border border-zinc-600 my-2" />
+                <a href="" className="text-sm text-blue-400 flex items-center">
+                  Edit on CodeSandbox
+                </a>
+              </div>
+              <div className="mt-5">
                 <h1 className="mb-2 font-medium text-2xl">
                   Some Common Questions
                 </h1>
-                <AccordionTest items={accordionItems} />
+                <Accordions items={accordionItems} />
+              </div>
+              <div className="mt-9 mb-4">
+                <div className="grid grid-cols-2 gap-4 w-full h-20">
+                  <div className="w-full h-full flex items-center justify-between dark:bg-zinc-800 bg-gray-200 rounded-lg px-4 border dark:border-zinc-800 border-gray-200 dark:hover:border-yellow-600 hover:border-yellow-600 cursor-pointer">
+                    <ReactIcon icon="RiArrowLeftSFill" className="w-9 h-9" />
+                    <div className="text-right">
+                      <h1 className="font-bold">Next</h1>
+                      <p className="text-sm">What is Presm</p>
+                    </div>
+                  </div>
+                  <div className="w-full h-full flex items-center justify-between dark:bg-zinc-800 bg-gray-200 rounded-lg px-4 border dark:border-zinc-800 border-gray-200 dark:hover:border-yellow-600 hover:border-yellow-600 cursor-pointer">
+                    <div className="text-left">
+                      <h1 className="font-bold">Prev</h1>
+                      <p className="text-sm">What is Presm</p>
+                    </div>
+                    <ReactIcon icon="RiArrowRightSFill" className="w-9 h-9" />
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </div>
         <div className="py-10 hidden lg:block">
-          <div className="dark:bg-zinc-700 bg-gray-100 lg:w-[330px] h-screen shadow-xl border-2 p-3 border-red-600">
-            cards
+          <div className="dark:bg-zinc-700 bg-gray-100 lg:w-[330px] h-screen shadow-xl border p-3 border-yellow-600">
+            <h1 className="flex justify-center pt-10">Ads & feature Cards</h1>
           </div>
         </div>
       </div>
       <CourseCard />
     </div>
   );
-}
+};
 
 export default blogsView;

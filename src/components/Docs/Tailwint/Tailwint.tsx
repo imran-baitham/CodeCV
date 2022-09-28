@@ -6,16 +6,14 @@ import flutter from "../../../public/assets/flutter.png";
 import svelte from "../../../public/assets/svelte.png";
 import tailwindimg from "../../../public/assets/tailwindcss.png";
 import vuejs from "../../../public/assets/vuejs.png";
-import laptop from "../../../public/World.png";
 import bgimage from "../../../public/hero-bg.jpg";
-import TestSlider from "../TestSlider/TestSlider";
-// import imageone from "../../../public/assets/pexels-michael-block-3225517.jpg";
+import { HomeCodeSlider } from "../HomeCodeSlider/HomeCodeSlider";
 
-function Tailwint() {
+export function Tailwint() {
   return (
     <div className="pr-[1rem] overflow-hidden">
       <div className="py-20 container_div overflow-visible w-full h-screen md:h-[780px] dark:bg-zinc-800 md:flex flex-col-reverse md:flex-row justify-center items-center overflow-hidden">
-        <TestSlider />
+        <HomeCodeSlider />
 
         <div className="w-full md:w-1/2 flex justify-center items-center transform scale-75 md:scale-125 translate-x-0 md:translate-x-40 translate-y-20 md:translate-y-2 hidden md:flex">
           <img
@@ -41,7 +39,7 @@ function Tailwint() {
             </div>
           </div>
 
-          <div className="hw-outer flex justify-between items-center absolute border dark:border-white border-gray-800 rounded-full animate-spin-slow ">
+          <div className="hw-outer flex justify-between items-center absolute border dark:border-white border-gray-800 rounded-full animate-spin-slow">
             <div className="flex justify-between items-center h-full w-full">
               <div className="bg-white p-1 rounded-full custom-shadow h-10 w-10  transform translate-x-8 translate-y-40 ">
                 <img
@@ -81,5 +79,3 @@ function Tailwint() {
     </div>
   );
 }
-
-export default Tailwint;

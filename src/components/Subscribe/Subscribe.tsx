@@ -1,15 +1,20 @@
 import React from "react";
+import footerImage from "../../public/footerbg.jpg";
+import { Button } from "../Button/Button";
 
-function Subscribe() {
+export function Subscribe() {
   return (
-    <div className="container_main pb-10">
+    <div
+      className="container_main pb-10"
+      style={{ backgroundImage: `${footerImage.src}` }}
+    >
       <div className="lg:h-[270px] dark:bg-zinc-700 p-3 bg-gray-100">
-        <div className="grid grid-cols-1 lg:grid-cols-2 p-4 md:p-[60px] lg:border lg:border-white">
+        <div className="grid grid-cols-1 lg:grid-cols-2 p-4 md:p-[60px]">
           <div className="lg:w-auto">
             <h1 className="font-bold text-2xl py-2">
               Subscribe Our Newsletter
             </h1>
-            <p className="font medium text-md pb-7">
+            <p className="font medium text-md pb-5 md:pb-0 md:pr-[3rem]">
               {"Don't"} miss out on your discounts. Subscribe to our email
               newsletter to get the best offers, discounts, coupons, gifts and
               much more.
@@ -22,19 +27,12 @@ function Subscribe() {
               </label>
               <input
                 type="email"
-                name="email-address"
-                id="email-address"
                 required
-                className="w-full min-w-0 appearance-none rounded-md border border-gray-300 bg-white py-2 px-4 text-base text-gray-900 placeholder-gray-500 shadow-sm focus:border-indigo-500 focus:placeholder-gray-400 focus:outline-none focus:ring-indigo-500"
+                className="w-full min-w-0 appearance-none rounded border border-gray-300 bg-white py-3 md:py-0 px-4 text-base text-gray-900 placeholder-gray-500 shadow-sm"
                 placeholder="Enter your email"
               />
-              <div className="mt-3 rounded-md sm:mt-0 sm:ml-3 sm:flex-shrink-0">
-                <button
-                  type="submit"
-                  className="flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 py-2 px-4 text-base font-medium text-white hover:bg-indigo-700 focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
-                >
-                  Subscribe
-                </button>
+              <div className="mt-3 rounded-md sm:mt-0 sm:ml-1 sm:flex-shrink-0">
+                <Button className="rounded" full>Subscribe</Button>
               </div>
             </form>
           </div>
@@ -43,5 +41,3 @@ function Subscribe() {
     </div>
   );
 }
-
-export default Subscribe;

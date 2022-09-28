@@ -2,7 +2,6 @@ export { FaAngular } from "@react-icons/all-files/fa/FaAngular";
 export { FaYarn } from "@react-icons/all-files/fa/FaYarn";
 export { FaReact } from "@react-icons/all-files/fa/FaReact";
 export { FaPython } from "@react-icons/all-files/fa/FaPython";
-export { FaNodeJs } from "@react-icons/all-files/fa/FaNodeJs";
 export { FaFolderMinus } from "@react-icons/all-files/fa/FaFolderMinus";
 export { FaArrowLeft } from "@react-icons/all-files/fa/FaArrowLeft";
 export { FaPlusCircle } from "@react-icons/all-files/fa/FaPlusCircle";
@@ -56,7 +55,6 @@ export { FaPlusSquare } from "@react-icons/all-files/fa/FaPlusSquare";
 export { HiMenuAlt2 } from "@react-icons/all-files/hi/HiMenuAlt2";
 export { HiOutlineX } from "@react-icons/all-files/hi/HiOutlineX";
 export { HiChevronDown } from "@react-icons/all-files/hi/HiChevronDown";
-
 export { HiLocationMarker } from "@react-icons/all-files/hi/HiLocationMarker";
 
 // ========== {  MY IMPORT ICONS FOR USING WEB  } ===========
@@ -71,6 +69,62 @@ export { RiInstagramFill } from "@react-icons/all-files/ri/RiInstagramFill";
 export { RiLinkedinBoxFill } from "@react-icons/all-files/ri/RiLinkedinBoxFill";
 export { RiYoutubeFill } from "@react-icons/all-files/ri/RiYoutubeFill";
 export { FaPlus } from "@react-icons/all-files/fa/FaPlus";
+// ===============  { Fill Arrow Icons }  =================
 export { RiArrowDownSFill } from "@react-icons/all-files/ri/RiArrowDownSFill";
-// IoMdArrowDropdown
-// RiArrowDownSFill
+export { RiArrowRightSFill } from "@react-icons/all-files/ri/RiArrowRightSFill";
+export { RiArrowLeftSFill } from "@react-icons/all-files/ri/RiArrowLeftSFill";
+export { RiArrowGoBackFill } from "@react-icons/all-files/ri/RiArrowGoBackFill";
+export { IoMdArrowRoundForward } from "@react-icons/all-files/io/IoMdArrowRoundForward";
+export { FiArrowRight } from "@react-icons/all-files/fi/FiArrowRight";
+export { CgArrowsExpandUpRight } from "@react-icons/all-files/cg/CgArrowsExpandUpRight";
+
+export { RiDownload2Line } from "@react-icons/all-files/ri/RiDownload2Line";
+export { RiFolderDownloadLine } from "@react-icons/all-files/ri/RiFolderDownloadLine";
+export { BsBoxArrowUpRight } from "@react-icons/all-files/bs/BsBoxArrowUpRight";
+// ===============  { FrameWork Icons }  =================
+export { RiReactjsFill } from "@react-icons/all-files/ri/RiReactjsFill";
+export { FaNodeJs } from "@react-icons/all-files/fa/FaNodeJs";
+export { RiHtml5Fill } from "@react-icons/all-files/ri/RiHtml5Fill";
+export { DiCss3 } from "@react-icons/all-files/di/DiCss3";
+export { SiTailwindcss } from "@react-icons/all-files/si/SiTailwindcss";
+export { SiJavascript } from "@react-icons/all-files/si/SiJavascript"; // big js icon
+export { IoLogoJavascript } from "@react-icons/all-files/io/IoLogoJavascript"; // small js icon
+export { SiTypescript } from "@react-icons/all-files/si/SiTypescript";
+export { SiRedux } from "@react-icons/all-files/si/SiRedux";
+export { SiGatsby } from "@react-icons/all-files/si/SiGatsby";
+export { RiVuejsFill } from "@react-icons/all-files/ri/RiVuejsFill";
+export { ImNext } from "@react-icons/all-files/im/ImNext";
+export { ImArrowLeft2 } from "@react-icons/all-files/im/ImArrowLeft2";
+
+// ===============  { For Video slug Icons }  =================
+export { ImHome } from "@react-icons/all-files/im/ImHome";
+export { BsCheckCircle } from "@react-icons/all-files/bs/BsCheckCircle";
+
+export { AiOutlineDislike } from "@react-icons/all-files/ai/AiOutlineDislike";
+export { AiOutlineLike } from "@react-icons/all-files/ai/AiOutlineLike";
+export { AiFillLike } from "@react-icons/all-files/ai/AiFillLike";
+export { AiTwotoneDislike } from "@react-icons/all-files/ai/AiTwotoneDislike";
+
+export { GiNorthStarShuriken } from "@react-icons/all-files/gi/GiNorthStarShuriken";
+
+export { RiShareForwardLine } from "@react-icons/all-files/ri/RiShareForwardLine"; // no fill icon
+export { RiShareForwardFill } from "@react-icons/all-files/ri/RiShareForwardFill";
+
+export { FiPlayCircle } from "@react-icons/all-files/fi/FiPlayCircle";
+
+// ===============  { For Search Icons }  =================
+export { BsFolderPlus } from "@react-icons/all-files/bs/BsFolderPlus";
+export { BsExclamationTriangle } from "@react-icons/all-files/bs/BsExclamationTriangle";
+export { BiSupport } from "@react-icons/all-files/bi/BiSupport";
+
+// ===============  { For Courses Icons }  =================
+export { MdOndemandVideo } from "@react-icons/all-files/md/MdOndemandVideo";
+export { CgTemplate } from "@react-icons/all-files/cg/CgTemplate";
+export { BsBuilding } from "@react-icons/all-files/bs/BsBuilding";
+export { CgFileDocument } from "@react-icons/all-files/cg/CgFileDocument";
+// ===============  { For Icons }  =================
+export { RiContactsLine } from "@react-icons/all-files/ri/RiContactsLine";
+export { ImPlay } from "@react-icons/all-files/im/ImPlay";
+// ===============  { For Test aboutus Icons }  =================
+export { FaUserTag } from "@react-icons/all-files/fa/FaUserTag";
+export { GiDrippingStar } from "@react-icons/all-files/gi/GiDrippingStar";

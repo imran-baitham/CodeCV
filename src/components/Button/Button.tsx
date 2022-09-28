@@ -64,13 +64,12 @@ export const Button = ({
   );
 };
 
-// ===============================================================================================================
+/**
+ * Spinner Component
+ * Implements a component that renders a spinner with Tailwind CSS classes that wrap around a SVG circle with a notch.
+ * @param {*} props
+ */
 
-// /**
-//  * Spinner Component
-//  * Implements a component that renders a spinner with Tailwind CSS classes that wrap around a SVG circle with a notch.
-//  * @param {*} props
-//  */
 // export const SpinnerComponent = ({
 //   spin = true,
 //   className = "",
@@ -100,12 +99,13 @@ export const Button = ({
 //   );
 // };
 
-// /**
-//  * @function LoadingIndicatorButton
-//  * Implements a button with Tailwind CSS classes that that has a spinning loading indicator and text centered inside.  The default button is blue (bg-blue-500) and white text (text-white) with a white loading indicator.
-//  * When the `loading` prop is set to true, the button will be disabled and the indicator will be spinning.
-//  * @param {*} props - The props to be passed to the component.
-//  */
+/**
+ * @function LoadingIndicatorButton
+ * Implements a button with Tailwind CSS classes that that has a spinning loading indicator and text centered inside.  The default button is blue (bg-blue-500) and white text (text-white) with a white loading indicator.
+ * When the `loading` prop is set to true, the button will be disabled and the indicator will be spinning.
+ * @param {*} props - The props to be passed to the component.
+ */
+
 // export function LoadingIndicatorButton({
 //   loading = false,
 //   text = "Refresh",

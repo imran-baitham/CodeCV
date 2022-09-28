@@ -1,5 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Theme } from "../index";
 import { Fragment } from "react";
 import { Menu, Transition } from "@headlessui/react";
@@ -12,125 +12,90 @@ import {
   BookmarkSquareIcon,
   BriefcaseIcon,
   BuildingOfficeIcon,
-  ChartBarIcon,
-  CheckCircleIcon,
   ComputerDesktopIcon,
-  CursorArrowRaysIcon,
   GlobeAltIcon,
   InformationCircleIcon,
   NewspaperIcon,
-  PhoneIcon,
-  PlayIcon,
   ShieldCheckIcon,
-  Squares2X2Icon,
   UserGroupIcon,
-  XMarkIcon,
 } from "@heroicons/react/24/outline";
-import { ChevronDownIcon } from "@heroicons/react/20/solid";
+// import Image from "next/image";
+import { userNotifaction } from "../../mocks/mocks";
 
 const solutions = [
   {
-    name: "Analytics",
+    name: "Documentation",
     description:
       "Get a better understanding of where your traffic is coming from.",
-    href: "#",
-    icon: ChartBarIcon,
+    href: "/blogs",
+    icon: "CgFileDocument",
   },
   {
-    name: "Engagement",
+    name: "Video Tutorial",
     description: "Speak directly to your customers in a more meaningful way.",
-    href: "#",
-    icon: CursorArrowRaysIcon,
+    href: "/videostutorial",
+    icon: "MdOndemandVideo",
   },
   {
-    name: "Security",
+    name: "Free Templates",
     description: "Your customers' data will be safe and secure.",
-    href: "#",
-    icon: ShieldCheckIcon,
+    href: "/templetes?item",
+    icon: "CgTemplate",
   },
   {
-    name: "Integrations",
+    name: "Community",
     description: "Connect with third-party tools that you're already using.",
-    href: "#",
-    icon: Squares2X2Icon,
+    href: "/aboutus",
+    icon: "BsBuilding",
   },
 ];
 const callsToAction = [
-  { name: "Watch Demo", href: "#", icon: PlayIcon },
-  { name: "View All Products", href: "#", icon: CheckCircleIcon },
-  { name: "Contact Us", href: "#", icon: PhoneIcon },
+  { name: "Watch Demo", href: "https://www.google.com.pk", icon: "ImPlay" },
+  { name: "Contact Us", href: "/contact", icon: "RiContactsLine" },
 ];
 const company = [
-  { name: "About", href: "#", icon: InformationCircleIcon },
-  { name: "Customers", href: "#", icon: BuildingOfficeIcon },
-  { name: "Press", href: "#", icon: NewspaperIcon },
-  { name: "Careers", href: "#", icon: BriefcaseIcon },
-  { name: "Privacy", href: "#", icon: ShieldCheckIcon },
-];
-const resources = [
-  { name: "Community", href: "#", icon: UserGroupIcon },
-  { name: "Partners", href: "#", icon: GlobeAltIcon },
-  { name: "Guides", href: "#", icon: BookmarkSquareIcon },
-  { name: "Webinars", href: "#", icon: ComputerDesktopIcon },
-];
-const blogPosts = [
-  {
-    id: 1,
-    name: "Boost your conversion rate",
-    href: "#",
-    preview:
-      "Eget ullamcorper ac ut vulputate fames nec mattis pellentesque elementum. Viverra tempor id mus.",
-    imageUrl:
-      "https://images.unsplash.com/photo-1558478551-1a378f63328e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2849&q=80",
-  },
-  {
-    id: 2,
-    name: "How to use search engine optimization to drive traffic to your site",
-    href: "#",
-    preview:
-      "Eget ullamcorper ac ut vulputate fames nec mattis pellentesque elementum. Viverra tempor id mus.",
-    imageUrl:
-      "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2300&q=80",
-  },
+  { name: "Quiz", href: "/quiz", icon: InformationCircleIcon },
+  { name: "Articles", href: "/", icon: BuildingOfficeIcon },
+  { name: "Videos", href: "/videostutorial", icon: NewspaperIcon },
+  { name: "Blog", href: "/blogs", icon: BriefcaseIcon },
+  { name: "Projects", href: "/templetes?item", icon: ShieldCheckIcon },
 ];
 
-// ==========================
-export const userNotifaction = [
-  {
-    title: "Get a first look at Joy DoYar 😍",
-    subtext:
-      "Joy UI is MUI's new starting point for your design system. Check out the blog post to see what's in store for this new library.",
-    href: "#",
-  },
-  {
-    title: "Premium passengers, please proceed to the boarding gate 🚀",
-    subtext: "Our docs just got a major upgrade!",
-    href: "#",
-  },
-  {
-    title: "Noti_fi_cation",
-    subtext:
-      "You can follow us on Twitter to receive exclusive tips and updates about MUI and the React ecosystem ❣️.",
-    href: "#",
-  },
+const resources = [
+  { name: "For Individuals", href: "#", icon: UserGroupIcon },
+  { name: "For Students", href: "#", icon: GlobeAltIcon },
+  { name: "For Teams", href: "#", icon: BookmarkSquareIcon },
+  { name: "For Companys", href: "#", icon: ComputerDesktopIcon },
 ];
 
 export function Header() {
   const [isOpen, setIsOpen] = useState(false);
+
+  const [data, setData] = useState(null);
+  const getData = () => fetch("/api/articles").then((res) => res.json());
+
+  useEffect(() => {
+    setTimeout(() => {
+      getData().then((product) => setData(product));
+    }, 0);
+  }, []);
 
   return (
     <div className="mb-[70px] dark:bg-zinc-800 bg-white">
       <header className="header fixed top-0 left-0 right-0 shadow-lg z-20 dark:bg-zinc-800 bg-white">
         <nav className="flex items-center justify-between h-20 container_main">
           <Link href={"/"}>
-            <h1 className="cursor-pointer text-2xl text-yellow-500">
-              Code_<span className="font-bold">Vision</span>
+            <h1 className="cursor-pointer text-xl font-[550] text-yellow-500 hover:text-blue-100 group">
+              <span className="border px-[3px] border-yellow-400 font-bold group-hover:border-blue-300">
+                code
+              </span>
+              <span className="underline pl-[2px]">T</span>echy
             </h1>
           </Link>
 
           <Popover.Group
             as="nav"
-            className="flex space-x-5 hidden md:flex items-center justify-center"
+            className="flex space-x-4 hidden md:flex items-center justify-center"
           >
             <Popover>
               {({ open }) => (
@@ -138,10 +103,10 @@ export function Header() {
                   <Popover.Button
                     className={classNames(
                       open ? "text-gray-00" : "",
-                      "text-md group inline-flex items-center outline-none p-[6px]"
+                      "text-md group inline-flex items-center outline-none"
                     )}
                   >
-                    <span>Solutions</span>
+                    <span>Courses</span>
                     <ReactIcon
                       icon="RiArrowDownSFill"
                       className={classNames(
@@ -160,57 +125,59 @@ export function Header() {
                     leaveFrom="opacity-100 translate-y-0"
                     leaveTo="opacity-0 -translate-y-1"
                   >
-                    <Popover.Panel className="absolute inset-x-0 top-full z-10 hidden transform dark:bg-zinc-800 bg-white shadow-lg md:block">
+                    <Popover.Panel className="border-t-4 dark:border-zinc-700 border-gray-200 absolute inset-x-0 top-full z-10 hidden transform dark:bg-zinc-800 bg-white shadow-lg md:block">
                       <div className="mx-auto grid max-w-7xl gap-y-6 px-4 py-6 sm:grid-cols-2 sm:gap-8 sm:px-6 sm:py-8 lg:grid-cols-4 lg:px-8 lg:py-12 xl:py-12">
-                        {solutions.map((item) => (
-                          <a
+                        {solutions.map((item: any) => (
+                          <div
                             key={item.name}
-                            href={item.href}
-                            className="-m-3 flex flex-col justify-between rounded-lg p-4 dark:hover:bg-zinc-700 hover:bg-gray-100"
+                            className="-m-3 cursor-pointer flex flex-col justify-between rounded-lg p-4 dark:hover:bg-zinc-700 hover:bg-gray-100"
                           >
-                            <div className="flex md:h-full lg:flex-col">
-                              <div className="flex-shrink-0">
-                                <span className="inline-flex h-10 w-10 items-center justify-center rounded-md bg-indigo-500 text-white sm:h-12 sm:w-12">
-                                  <item.icon
-                                    className="h-6 w-6"
-                                    aria-hidden="true"
-                                  />
-                                </span>
-                              </div>
-                              <div className="ml-4 md:flex md:flex-1 md:flex-col md:justify-between lg:ml-0 lg:mt-4">
-                                <div>
-                                  <p className="text-base font-medium">
-                                    {item.name}
-                                  </p>
-                                  <p className="mt-1 text-sm dark:text-gray-400 text-gray-500">
-                                    {item.description}
+                            <Link href={item.href}>
+                              <div className="flex md:h-full lg:flex-col">
+                                <div className="flex-shrink-0">
+                                  <span className="inline-flex h-10 w-10 items-center justify-center rounded-md bg-indigo-500 text-white sm:h-12 sm:w-12">
+                                    <ReactIcon
+                                      icon={item.icon}
+                                      className="h-6 w-6"
+                                    />
+                                  </span>
+                                </div>
+                                <div className="ml-4 md:flex md:flex-1 md:flex-col md:justify-between lg:ml-0 lg:mt-4">
+                                  <div>
+                                    <p className="text-base font-medium">
+                                      {item.name}
+                                    </p>
+                                    <p className="mt-1 text-sm dark:text-gray-400 text-gray-500">
+                                      {item.description}
+                                    </p>
+                                  </div>
+                                  <p className="mt-2 text-sm font-medium text-indigo-600 lg:mt-4">
+                                    Learn more
+                                    <span aria-hidden="true"> &rarr;</span>
                                   </p>
                                 </div>
-                                <p className="mt-2 text-sm font-medium text-indigo-600 lg:mt-4">
-                                  Learn more
-                                  <span aria-hidden="true"> &rarr;</span>
-                                </p>
                               </div>
-                            </div>
-                          </a>
+                            </Link>
+                          </div>
                         ))}
                       </div>
                       <div className="dark:bg-zinc-700 bg-gray-50">
                         <div className="mx-auto max-w-7xl space-y-6 px-4 py-5 sm:flex sm:space-y-0 sm:space-x-10 sm:px-6 lg:px-8">
-                          {callsToAction.map((item) => (
+                          {callsToAction.map((item: any) => (
                             <div key={item.name} className="flow-root">
-                              <a
-                                href={item.href}
-                                className="-m-3 flex items-center rounded-md p-3 text-base font-medium text-gray-900"
-                              >
-                                <item.icon
-                                  className="h-6 w-6 flex-shrink-0 text-gray-400"
-                                  aria-hidden="true"
-                                />
-                                <span className="ml-3 dark:text-gray-300">
-                                  {item.name}
-                                </span>
-                              </a>
+                              <Link href={item.href}>
+                                <div className="-m-3 flex items-center rounded-md p-3 text-base font-medium text-gray-900 cursor-pointer">
+                                  <ReactIcon
+                                    icon={item.icon}
+                                    className={
+                                      "h-6 w-6 flex-shrink-0 text-gray-400"
+                                    }
+                                  />
+                                  <span className="ml-3 dark:text-gray-300">
+                                    {item.name}
+                                  </span>
+                                </div>
+                              </Link>
                             </div>
                           ))}
                         </div>
@@ -227,7 +194,7 @@ export function Header() {
               Blogs
             </Link>
             <Link
-              href={"/contact"}
+              href={"/contact?us"}
               className="text-md group inline-flex items-center outline-none"
             >
               Contact Us
@@ -260,37 +227,36 @@ export function Header() {
                     leaveFrom="opacity-100 translate-y-0"
                     leaveTo="opacity-0 -translate-y-1"
                   >
-                    <Popover.Panel className="absolute inset-x-0 top-full z-10 hidden transform shadow-lg sm:block">
+                    <Popover.Panel className="border-t-2 dark:border-zinc-700 border-gray-200 absolute inset-x-0 top-full z-10 hidden transform shadow-lg sm:block">
                       <div className="absolute inset-0 flex">
                         <div className="w-1/2 dark:bg-zinc-700 bg-white" />
-                        <div className="w-1/2 dark:bg-zinc-800 bg-gray-50 border-b-2 border-yellow-600" />
+                        <div className="w-1/2 dark:bg-zinc-800 bg-gray-50" />
                       </div>
                       <div className="relative mx-auto grid max-w-7xl grid-cols-1 lg:grid-cols-2">
                         <nav className="grid gap-y-10 px-4 py-8 sm:grid-cols-2 sm:gap-x-8 sm:py-12 sm:px-6 lg:px-8 xl:pr-12 dark:bg-zinc-700">
                           <div>
                             <h3 className="text-base font-medium dark:text-gray-300 text-gray-500">
-                              Company
+                              Resources
                             </h3>
                             <ul role="list" className="mt-5 space-y-6">
                               {company.map((item) => (
                                 <li key={item.name} className="flow-root">
-                                  <a
-                                    href={item.href}
-                                    className="-m-3 flex items-center rounded-md p-3 text-base font-medium dark:text-gray-300 text-gray-900 dark:hover:bg-zinc-800 hover:bg-gray-50"
-                                  >
-                                    <item.icon
-                                      className="h-6 w-6 flex-shrink-0 dark:text-gray-300 text-gray-400"
-                                      aria-hidden="true"
-                                    />
-                                    <span className="ml-4">{item.name}</span>
-                                  </a>
+                                  <Link href={item.href}>
+                                    <div className="cursor-pointer -m-3 flex items-center rounded-md p-3 text-base font-medium dark:text-gray-300 text-gray-900 dark:hover:bg-zinc-800 hover:bg-gray-50">
+                                      <item.icon
+                                        className="h-6 w-6 flex-shrink-0 dark:text-gray-300 text-gray-400"
+                                        aria-hidden="true"
+                                      />
+                                      <span className="ml-4">{item.name}</span>
+                                    </div>
+                                  </Link>
                                 </li>
                               ))}
                             </ul>
                           </div>
                           <div>
                             <h3 className="text-base font-medium dark:text-gray-300 text-gray-500">
-                              Resources
+                              Pricing
                             </h3>
                             <ul role="list" className="mt-5 space-y-6">
                               {resources.map((item) => (
@@ -310,46 +276,60 @@ export function Header() {
                             </ul>
                           </div>
                         </nav>
-                        <div className="dark:bg-zinc-800 bg-gray-50 px-4 py-8 sm:py-12 sm:px-6 lg:px-8 xl:pl-12 border-b-2 border-yellow-600">
+                        <div className="dark:bg-zinc-800 bg-gray-50 px-4 py-8 sm:py-12 sm:px-6 lg:px-8 xl:pl-12">
                           <div>
-                            <h3 className="text-base font-medium dark:text-gray-300 text-gray-500">
+                            <h3 className="text-base font-bold dark:text-gray-300 text-gray-500">
                               From the blog
                             </h3>
-                            <ul role="list" className="mt-6 space-y-6">
-                              {blogPosts.map((post) => (
-                                <li key={post.id} className="flow-root">
-                                  <a
-                                    href={post.href}
-                                    className="-m-3 flex rounded-lg p-3 dark:hover:bg-zinc-700 hover:bg-gray-100"
-                                  >
-                                    <div className="hidden flex-shrink-0 sm:block">
-                                      <img
-                                        className="h-20 w-32 rounded-md object-cover"
-                                        src={post.imageUrl}
-                                        alt=""
-                                      />
-                                    </div>
-                                    <div className="w-0 flex-1 sm:ml-4">
-                                      <h4 className="truncate text-base font-medium dark:text-gray-300 text-gray-900">
-                                        {post.name}
-                                      </h4>
-                                      <p className="mt-1 text-sm dark:text-gray-400 text-gray-500">
-                                        {post.preview}
-                                      </p>
-                                    </div>
-                                  </a>
-                                </li>
-                              ))}
+                            <ul
+                              role="list"
+                              className="mt-6 space-y-0 gap-2 grid grid-cols-2"
+                            >
+                              {data
+                                ?.slice(7, 9)
+                                .map(
+                                  (post: {
+                                    id: number;
+                                    imageUrl: any;
+                                    title: string;
+                                    slug: string;
+                                  }) => {
+                                    return (
+                                      <Link
+                                        href={`/blogs/${[post.slug]}`}
+                                        passHref
+                                        key={post.id}
+                                      >
+                                        <div
+                                          className="shadow items-center grid grid-cols-1 rounded cursor-pointer hover:shadow-md dark:bg-zinc-700"
+                                          key={post.id}
+                                        >
+                                          <div className="">
+                                            <img
+                                              src={post.imageUrl.src}
+                                              alt=""
+                                              className="lg:h-[140px] w-full"
+                                            />
+                                          </div>
+                                          <div className="p-3">
+                                            <h2 className="font-bold text-lg">
+                                              {post.title?.length > 43
+                                                ? post.title.slice(0, 42) +
+                                                  " ..."
+                                                : post.title}
+                                            </h2>
+                                          </div>
+                                        </div>
+                                      </Link>
+                                    );
+                                  }
+                                )}
                             </ul>
                           </div>
                           <div className="mt-6 text-sm font-medium">
-                            <a
-                              href=""
-                              className="text-indigo-600 hover:text-indigo-500"
-                            >
-                              View all posts
-                              <span aria-hidden="true"> &rarr;</span>
-                            </a>
+                            <span className="text-indigo-600 hover:text-indigo-500">
+                              <Link href={"/blogs"}>View all posts</Link>
+                            </span>
                           </div>
                         </div>
                       </div>
@@ -374,7 +354,7 @@ export function Header() {
                 leaveTo="transform opacity-0 scale-95"
               >
                 <Menu.Items className="origin-top-right absolute z-40 -right-[75px] w-[320px] md:right-0 mt-4 md:mt-2 md:w-96 rounded-md shadow-lg py-1 dark:bg-zinc-700 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none border-l-2 border-yellow-500">
-                  {userNotifaction.map((item) => (
+                  {userNotifaction.map((item: any) => (
                     <Menu.Item key={item.title}>
                       {({ active }) => (
                         <a
@@ -399,7 +379,7 @@ export function Header() {
             </Menu>
             <Theme />
             <button
-              className="border border-1 dark:border-white border-black p-[6px]"
+              className="border border-1 dark:border-white border-black p-[6px] outline-none"
               onClick={() => setIsOpen(true)}
             >
               <ReactIcon icon="RiSearchFill" className="w-5 h-5" />

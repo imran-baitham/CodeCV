@@ -2,9 +2,9 @@
 import Head from "next/head";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
-import { Button } from "../../components";
+import { Button, Subscribe } from "../../components";
 import { GenericLoader } from "../../components/GenericLoader/GenericLoader";
-import Subscribe from "../../components/Subscribe/Subscribe";
+// import Subscribe from "../../components/Subscribe/Subscribe";
 import { ViewProjectPreloader } from "./blogsSkeleton/BlogsSkeleton";
 
 export interface DataProps {
@@ -68,6 +68,7 @@ function Index() {
     });
     setCatagory(result);
   };
+
   return (
     <div className="dark:bg-zinc-800 bg-white pt-24">
       <Head>
@@ -81,13 +82,13 @@ function Index() {
         Our Daily Posts
       </h1>
       <div className="container_main py-5">
-        <div className="flex-1 bg-red-0">
+        <div className="flex-1 bg-red-0 py-4">
           {btn.map((x: any) => {
             return (
               <button
                 key={x.id}
                 onClick={() => filterResult(x.catagory)}
-                className="border-2 border-yellow-900 py-4 px-14 m-[5px]"
+                className="border-2 border-yellow-900 py-3 px-10 m-[5px] hover:bg-yellow-500 hover:text-black hover:border-yellow-500"
               >
                 {x.name}
               </button>

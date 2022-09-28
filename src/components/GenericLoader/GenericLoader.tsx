@@ -26,7 +26,7 @@ export const GenericLoader = (_props: GenericLoaderProps) => {
                       className="w-12 h-12 rounded-full flex-none z-0 m-1"
                     />
                   ) : (
-                    <div className="flex flex-1 my-2">
+                    <div className="flex flex-1 my-2 m-1">
                       <Skeleton
                         height={8}
                         width="99%"

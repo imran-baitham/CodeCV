@@ -103,6 +103,7 @@ export function Footer() {
                     {navigation.legal.map((item) => (
                       <li key={item.name}>
                         <a
+                         key={item.name}
                           href={item.href}
                           className="text-base dark:text-gray-300 text-gray-600 dark:hover:text-gray-200 hover:text-black"
                         >
@@ -125,6 +126,7 @@ export function Footer() {
                 {LinkMedia.map((x: any) => {
                   return (
                     <a
+                      key={x.name}
                       href=""
                       className="mr-2 border border-1 dark:border-white border-black p-[6px]"
                     >

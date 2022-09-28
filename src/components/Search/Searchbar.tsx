@@ -1,11 +1,6 @@
 import { Fragment, useState } from "react";
 import { Combobox, Dialog, Transition } from "@headlessui/react";
 import { classNames, ReactIcon } from "../index";
-import {
-  ExclamationIcon,
-  FolderIcon,
-  SupportIcon,
-} from "@heroicons/react/outline";
 import { Divider } from "@mantine/core";
 
 const projects = [
@@ -94,7 +89,7 @@ export const SearchBar: React.FC<SearchProps> = ({ isOpen, setIsOpen }) => {
       afterLeave={() => setRawQuery("")}
       appear
     >
-      <Dialog as="div" className="relative z-10" onClose={setIsOpen}>
+      <Dialog as="div" className="relative z-50" onClose={setIsOpen}>
         <Transition.Child
           as={Fragment}
           enter="ease-out duration-300"
@@ -117,7 +112,7 @@ export const SearchBar: React.FC<SearchProps> = ({ isOpen, setIsOpen }) => {
             leaveFrom="opacity-100 scale-100"
             leaveTo="opacity-0 scale-95"
           >
-            <Dialog.Panel className="p-1 mx-auto max-w-2xl transform divide-y divide-gray-100 overflow-hidden rounded-md dark:bg-zinc-700 bg-white shadow-2xl transition-all">
+            <Dialog.Panel className="p-1 mx-auto max-w-2xl transform overflow-hidden rounded-md dark:bg-zinc-700 bg-white shadow-2xl transition-all">
               <Combobox
                 onChange={(item: any) => (window.location = item.url)}
                 value=""
@@ -152,7 +147,7 @@ export const SearchBar: React.FC<SearchProps> = ({ isOpen, setIsOpen }) => {
                   >
                     {filteredProjects.length > 0 && (
                       <li>
-                        <h2 className="text-md font-bold text-gray-800">
+                        <h2 className="text-md font-bold dark:text-gray-200 text-gray-800">
                           Recent
                         </h2>
                         <ul className="-mx-4 mt-2 text-sm text-gray-700">
@@ -171,7 +166,8 @@ export const SearchBar: React.FC<SearchProps> = ({ isOpen, setIsOpen }) => {
                             >
                               {({ active }) => (
                                 <>
-                                  <FolderIcon
+                                  <ReactIcon
+                                    icon="BsFolderPlus"
                                     className={classNames(
                                       "h-6 w-6 flex-none",
                                       active
@@ -195,14 +191,15 @@ export const SearchBar: React.FC<SearchProps> = ({ isOpen, setIsOpen }) => {
 
                 {rawQuery === "?" && (
                   <div className="py-14 px-6 text-center text-sm sm:px-14">
-                    <SupportIcon
-                      className="mx-auto h-6 w-6 text-gray-400"
+                    <ReactIcon
+                      icon="BiSupport"
+                      className="mx-auto h-6 w-6"
                       aria-hidden="true"
                     />
-                    <p className="mt-4 font-semibold text-gray-900">
+                    <p className="mt-4 font-semibold dark:text-gray-100 text-gray-900">
                       Help with searching
                     </p>
-                    <p className="mt-2 text-gray-500">
+                    <p className="mt-2 dark:text-gray-300 text-gray-500">
                       Use this tool to quickly search for users and projects
                       across our entire platform. You can also use the search
                       modifiers found in the footer below to limit the results
@@ -215,14 +212,15 @@ export const SearchBar: React.FC<SearchProps> = ({ isOpen, setIsOpen }) => {
                   rawQuery !== "?" &&
                   filteredProjects.length === 0 && (
                     <div className="py-14 px-6 text-center text-sm sm:px-14">
-                      <ExclamationIcon
-                        className="mx-auto h-6 w-6 text-gray-400"
+                      <ReactIcon
+                        icon="BsExclamationTriangle"
+                        className="mx-auto h-6 w-6 text-gray-200"
                         aria-hidden="true"
                       />
-                      <p className="mt-4 font-semibold dark:text-gray-300 text-gray-900">
+                      <p className="mt-4 font-semibold dark:text-gray-100 text-gray-900">
                         No results found
                       </p>
-                      <p className="mt-2 dark:text-gray-400 text-gray-500">
+                      <p className="mt-2 dark:text-gray-300 text-gray-500">
                         We couldn’t find anything with that term. Please try
                         again.
                       </p>
@@ -230,11 +228,11 @@ export const SearchBar: React.FC<SearchProps> = ({ isOpen, setIsOpen }) => {
                   )}
 
                 {query === "" && filteredProjects.length === 0 && (
-                  <div className=" grid grid-cols-2 gap-4 items-center justify-between dark:bg-zinc-800 bg-gray-100 py-2.5 px-4 mt-2 text-xs text-gray-700 pb-8">
+                  <div className="grid grid-cols-2 gap-4 items-center justify-between dark:bg-zinc-900 bg-gray-100 py-2.5 px-4 mt-2 text-xs text-gray-700 pb-8">
                     {/* ssecond nav */}
                     <div className="mt-8">
                       <h3
-                        className="px-3 text-sm font-bold text-gray-500"
+                        className="px-3 text-sm font-bold dark:text-gray-400 text-gray-500"
                         id="projects-headline"
                       >
                         Getting started
@@ -257,7 +255,7 @@ export const SearchBar: React.FC<SearchProps> = ({ isOpen, setIsOpen }) => {
                     {/* first nav */}
                     <div className="mt-8">
                       <h3
-                        className="px-3 text-sm font-bold text-gray-500"
+                        className="px-3 text-sm font-bold dark:text-gray-400 text-gray-500"
                         id="projects-headline"
                       >
                         Popular searches
@@ -280,7 +278,7 @@ export const SearchBar: React.FC<SearchProps> = ({ isOpen, setIsOpen }) => {
                     {/* third nav */}
                     <div className="mt-8">
                       <h3
-                        className="px-3 text-sm font-bold text-gray-500"
+                        className="px-3 text-sm font-bold dark:text-gray-400 text-gray-500"
                         id="projects-headline"
                       >
                         Customization
@@ -303,7 +301,7 @@ export const SearchBar: React.FC<SearchProps> = ({ isOpen, setIsOpen }) => {
                     {/* forth nav */}
                     <div className="mt-8">
                       <h3
-                        className="px-3 text-sm font-bold text-gray-500"
+                        className="px-3 text-sm font-bold dark:text-gray-400 text-gray-500"
                         id="projects-headline"
                       >
                         System
@@ -325,12 +323,13 @@ export const SearchBar: React.FC<SearchProps> = ({ isOpen, setIsOpen }) => {
                     </div>
                   </div>
                 )}
-
+                <hr className="mt-3" />
                 <div className="flex flex-wrap items-center justify-between dark:bg-zinc-700 bg-gray-50 py-2.5 px-4 mt-2 text-xs text-gray-700">
                   <div className="flex items-center">
+                    <span className="text-gray-300 font-medium">For help</span>
                     <kbd
                       className={classNames(
-                        "mx-1 flex h-5 px-2 items-center justify-center rounded border dark:bg-zinc-800 dark:text-white bg-white font-semibold sm:mx-2",
+                        "mx-1 flex h-5 px-2 items-center justify-center rounded dark:bg-zinc-800 dark:text-white bg-white font-semibold sm:mx-2",
                         rawQuery.startsWith("#")
                           ? "border-indigo-600 text-indigo-600"
                           : "border-gray-400 text-gray-900"
@@ -338,8 +337,6 @@ export const SearchBar: React.FC<SearchProps> = ({ isOpen, setIsOpen }) => {
                     >
                       ?
                     </kbd>
-                    <span className="sm:hidden">for projects,</span>
-                    <span className="hidden sm:inline">for help</span>
                   </div>
 
                   <div className="flex dark:text-white">

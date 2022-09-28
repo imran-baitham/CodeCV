@@ -1,8 +1,7 @@
 import type { NextPage } from "next";
 import Head from "next/head";
-import { Article } from "../components/Article/Article";
-import Subscribe from "../components/Subscribe/Subscribe";
-import Tailwint from "../components/Docs/Tailwint/Tailwint";
+import { QuizCard, Tailwint, Subscribe, Article } from "../components";
+import Slider from "../components/Slider/Slider";
 
 const Home: NextPage = () => {
   return (
@@ -17,6 +16,13 @@ const Home: NextPage = () => {
       <main className="w-full dark:bg-zinc-800 bg-white">
         <div className="">
           <Tailwint />
+          <div className="py-20">
+            <h1 className="container_main text-yellow-400 font-bold text-4xl pb-7">
+              Start Quiz
+            </h1>
+            <QuizCard />
+          </div>
+          <Slider />
           <Article />
           <Subscribe />
         </div>

@@ -9,9 +9,9 @@ export const DemoData = [
     id: 1,
     slug: "Reslove-React-hydration-error-in-simple-way",
     title: "Reslove React hydration error in simple way",
-    description:
-      "Fix Next.js “Text content does not match server-rendered HTML” React hydration error",
-    subtitle: "SunTitle What books you should read in 2022",
+    subtitle:
+      "Fix Next.js “Text content does not match server-rendered HTML” React hydration error in Next Js",
+    description: <div>asdfasdf</div>,
     NetlifyBlog: "Netlify Blog",
     imageUrl: Demo,
     likes: 5,
@@ -21,33 +21,6 @@ export const DemoData = [
     code: `//logs code ...
     export { name } from "@mane`,
     catagory: "html",
-    content: (
-      <div>
-        Faucibus commodo massa rhoncus, volutpat. Dignissim sed eget risus enim.
-        Mattis mauris semper sed amet vitae sed turpis id. Id dolor praesent
-        donec est. Odio penatibus risus viverra tellus varius sit neque erat
-        velit. Faucibus commodo massa rhoncus, volutpat. Dignissim sed eget
-        risus enim. Mattis mauris semper sed amet vitae sed turpis This is the
-        first accordion body. It is hidden by default, but shown when
-        title is clicked. It will also be hidden if the title is clicked again
-        or when another item is clicked. You can pass HTML tags in the content
-        such as underline tag,
-      </div>
-    ),
-    accordionItems: [
-      {
-        title: "What is WebThone",
-        content: (
-          <div>
-            <strong>This is the first accordion body.</strong> It is
-            hidden by default, but shown when title is clicked. It will also be
-            hidden if the title is clicked again or when another item is
-            clicked. You can pass HTML tags in the content such as{" "}
-            <u>underline tag</u>,{" "}
-          </div>
-        ),
-      },
-    ],
   },
   {
     id: 2,
@@ -142,9 +115,9 @@ function Demo() {
     catagory: "tailwint",
     content: (
       <div>
-        <strong>This is the first accordion body.</strong> It is hidden
-        by default, but shown when title is clicked. It will also be hidden if
-        the title is clicked again or when another item is clicked. You can pass
+        <strong>This is the first accordion body.</strong> It is hidden by
+        default, but shown when title is clicked. It will also be hidden if the
+        title is clicked again or when another item is clicked. You can pass
         HTML tags in the content such as <u>underline tag</u>,{" "}
       </div>
     ),
@@ -174,9 +147,9 @@ function Demo() {
     catagory: "vue",
     content: (
       <div>
-        <strong>This is the first accordion body.</strong> It is hidden
-        by default, but shown when title is clicked. It will also be hidden if
-        the title is clicked again or when another item is clicked. You can pass
+        <strong>This is the first accordion body.</strong> It is hidden by
+        default, but shown when title is clicked. It will also be hidden if the
+        title is clicked again or when another item is clicked. You can pass
         HTML tags in the content such as <u>underline tag</u>,{" "}
       </div>
     ),
@@ -198,14 +171,6 @@ function Demo() {
     createdAt: new Date(),
     slug: "What-books-you-should-read",
     catagory: "angular",
-    content: (
-      <div>
-        <strong>This is the first accordion body.</strong> It is hidden
-        by default, but shown when title is clicked. It will also be hidden if
-        the title is clicked again or when another item is clicked. You can pass
-        HTML tags in the content such as <u>underline tag</u>.
-      </div>
-    ),
   },
   {
     id: 9,
@@ -263,7 +228,7 @@ function Demo() {
   },
   {
     id: 12,
-    title: "What books you should read in 2022?",
+    title: "Set Up and Demo test the Article 🎭",
     subtitle:
       "What books you should read in 2022? What books you should read in 2022? What books you should read in 2022? What books you should read in 2022?",
     imageUrl: Demo,

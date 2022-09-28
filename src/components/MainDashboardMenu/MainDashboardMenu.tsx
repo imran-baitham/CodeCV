@@ -1,12 +1,10 @@
-import React from 'react'
+import React from "react";
 
 function MainDashboardMenu() {
-  return (
-    <div>MainDashboardMenu</div>
-  )
+  return <div>MainDashboardMenu</div>;
 }
 
-export default MainDashboardMenu
+export default MainDashboardMenu;
 
 // import { Box, Center, createStyles, Group, Menu, Text } from "@mantine/core";
 // import { classNames } from "../index";

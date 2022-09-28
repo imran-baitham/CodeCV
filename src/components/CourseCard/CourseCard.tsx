@@ -1,5 +1,4 @@
 /* eslint-disable @next/next/no-img-element */
-// Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 
 // Import Swiper styles
@@ -10,17 +9,23 @@ import "swiper/css/pagination";
 import { Autoplay, Pagination } from "swiper";
 
 import Link from "next/link";
-import React, { useState } from "react";
-import { DemoData } from "../../mocks/mocks";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
+import { BlogsDataProps } from "../../Utils/blogsTypes";
 
 export function CourseCard() {
-  const [data, setData] = useState(DemoData);
+  const [data, setData] = useState(null);
+  const getData = () => fetch("/api/articles").then((res) => res.json());
+
+  useEffect(() => {
+    setTimeout(() => {
+      getData().then((product) => setData(product));
+    }, 0);
+  }, []);
 
   return (
     <div className="dark:bg-zinc-800 bg-white">
       <div className="container_main">
-        {/* <h1 className="text-yellow-400 font-bold text-4xl">Letest Article</h1> */}
         <div className="py-8 px-1">
           <Swiper
             slidesPerView={3}
@@ -31,7 +36,6 @@ export function CourseCard() {
             }}
             pagination={{
               dynamicBullets: true,
-              // clickable: true,
             }}
             modules={[Pagination, Autoplay]}
             className="mySwiper"
@@ -53,39 +57,43 @@ export function CourseCard() {
               },
             }}
           >
-            {data?.map(
-              (x: {
-                id: number;
-                title: string;
-                subtitle: string;
-                imageUrl: any;
-                date: string;
-                view: number;
-                slug: string;
-              }) => {
-                return (
-                  <SwiperSlide key={x.id}>
-                    <div className="mb-14">
-                      <div
-                        className="shadow rounded cursor-pointer hover:shadow-xl dark:bg-zinc-700"
-                        key={x.id}
-                      >
+            {data?.map((post: BlogsDataProps) => {
+              return (
+                <SwiperSlide key={post.id}>
+                  <div className="mb-14">
+                    <div className="shadow rounded hover:shadow-lg dark:bg-zinc-700">
+                      <div className="p-1">
                         <Image
                           width={500}
                           height={270}
-                          src={x.imageUrl}
+                          src={post.imageUrl}
                           alt={"image"}
-                          className="m-auto"
+                          className="m-auto rounded bg-gray-400"
                         />
-                        <div className="p-3 h-[80px] flex items-center justify-center">
-                          <h1 className="font-bold text-2xl">Pandng Design</h1>
+                      </div>
+                      {/* 
+                        Recent Future we add status of article live rating which 
+                        blogs or article good we give status susscess and poor we 
+                        give red or any thing 
+                        ====== ( its come form bryan project how we on on that project ) ========
+
+                        <div className={`p-3 border-l-4 border-yellow-500`}> 
+                      */}
+                      <div className={"p-3"}>
+                        <h1 className="font-bold text-xl">{post.title}</h1>
+                        <div className="pt-5 pb-1">
+                          <Link href={`/blogs/${[post.slug]}`} passHref>
+                            <span className="text-yellow-400 cursor-pointer">
+                              😍 Read article
+                            </span>
+                          </Link>
                         </div>
                       </div>
                     </div>
-                  </SwiperSlide>
-                );
-              }
-            )}
+                  </div>
+                </SwiperSlide>
+              );
+            })}
           </Swiper>
         </div>
       </div>

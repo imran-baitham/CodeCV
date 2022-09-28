@@ -47,7 +47,7 @@ let data = [
 ];
 export default function Slider(props: CarouselProps) {
   return (
-    <div className="bg-red-00 md:h-[500px] flex items-center">
+    <div className="bg-red-00 md:h-[500px]">
       <div className="container_main">
         <div className="py-8">
           <h1 className="text-yellow-400 font-bold text-4xl">Code Journey</h1>

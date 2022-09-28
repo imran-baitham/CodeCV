@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { ReactIcon } from "../index";
 import { getRefValue } from "../../hooks/hooks";
-import { AccordionData } from "./types";
+import { AccordionData } from "../../Utils/accordionTypes";
 
 function AccordionItem({
   data,
@@ -40,7 +40,7 @@ function AccordionItem({
       <div className="accordion-item-container mb-2" style={{ height }}>
         <div
           ref={contentRef}
-          className="mx-1 py-4 px-8 border-l-2 border-yellow-500 dark:bg-zinc-600 bg-gray-200 dark:text-gray-200 text-gray-600"
+          className="text-md mx-1 py-4 px-8 border-l-2 border-yellow-500 dark:bg-zinc-600 bg-gray-200 dark:text-gray-200 text-gray-600"
         >
           {data.content}
         </div>

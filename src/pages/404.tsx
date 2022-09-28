@@ -4,13 +4,13 @@ import { Button } from "../components";
 
 function index() {
   return (
-    <div className="dark:bg-zinc-800">
-      <div className="container_main h-[830px] dark:bg-zinc-800 flex items-center justify-center">
+    <div className="dark:bg-zinc-800 overflow-hidden">
+      <div className="container_main md:h-[810px] h-[780px] dark:bg-zinc-800 flex items-center justify-center">
         <div className="w-full flex justify-center">
-          <h1 className="font-bold text-[500px] dark:text-zinc-700 text-gray-100">
+          <h1 className="font-bold text-[240px] md:text-[500px] dark:text-zinc-700 text-gray-100">
             404
           </h1>
-          <div className="absolute top-[450px] w-[500px] text-center">
+          <div className="absolute px-[2rem] md:px-0 top-[400px] md:top-[370px] md:w-[500px] text-center">
             <div>
               <h1 className="font-bold text-4xl my-2">Nothing to see here</h1>
               <p className="text-md leading mb-2">
