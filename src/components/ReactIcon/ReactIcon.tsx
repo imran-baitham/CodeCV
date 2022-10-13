@@ -19,6 +19,7 @@ export interface ReactIconLoaderProps
  * high memory usage and slow compile times with the 'react-icons' version of
  * the library.
  */
+
 export const ReactIcon = ({
   icon,
   ...props

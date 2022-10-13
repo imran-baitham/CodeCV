@@ -239,6 +239,15 @@ const blogsView = () => {
         </div>
       </div>
       <CourseCard />
+      <div className="dark:bg-zinc-700 h-[460px] w-[90px] left-[0px] fixed top-[120px] rounded-sm shadow-xl border border-yellow-500">
+        <div className="grid grid-rows-3 items-center justify-center">
+          <h1>sdf</h1>
+          <h1>sdf</h1>
+          <h1>sdf</h1>
+          <h1>sdf</h1>
+          <h1>sdf</h1>
+        </div>
+      </div>
     </div>
   );
 };

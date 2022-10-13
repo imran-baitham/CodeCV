@@ -6,11 +6,13 @@ import Link from "next/link";
 import { tempDataProps } from "../../Utils/templeteProps";
 import { tasks } from "../../mocks/mocks";
 import TestImage from "../../public/templetesscreenshort/templetetwo.jpg";
-import { Loader } from "@mantine/core";
+import { Loader, Pagination } from "@mantine/core";
 
 function index() {
-  const [data, setData] = useState<any>(null);
+  const [data, setData] = useState<tempDataProps | any>(null);
   const getData = () => fetch("/api/templetes").then((res) => res.json());
+  const [activePage, setPage] = useState(1);
+  const [SortedData, setSortedData] = useState<any>(data?.slice(0, 3));
 
   useEffect(() => {
     setTimeout(() => {
@@ -26,6 +28,13 @@ function index() {
         </div>
       </div>
     );
+
+  const handleChange = (activePage: number) => {
+    const init = activePage * 3 - 3;
+    const end = activePage * 3 + 0;
+    setSortedData(data.slice(init, end));
+    setPage(activePage);
+  };
 
   return (
     <div>
@@ -63,6 +72,15 @@ function index() {
                   </div>
                 );
               })}
+            </div>
+            <div className="flex justify-end py-12">
+              <Pagination
+                page={activePage}
+                onChange={handleChange}
+                total={Math.ceil(data.length / 3)}
+                size="lg"
+                color={"gray"}
+              />
             </div>
           </div>
           <h1 className="font-bold text-4xl py-6">Animation Tasks</h1>

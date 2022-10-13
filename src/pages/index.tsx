@@ -1,7 +1,9 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import { QuizCard, Tailwint, Subscribe, Article } from "../components";
+import Academy from "../components/Academy/Academy";
 import Slider from "../components/Slider/Slider";
+import SmallTags from "../components/SmallTag/SmallTags";
 
 const Home: NextPage = () => {
   return (

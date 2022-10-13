@@ -13,7 +13,7 @@ export interface DataProps {
   image?: any;
 }
 export function Article() {
-  const [data, setData] = useState(null);
+  const [data, setData] = useState<BlogsDataProps| any>(null);
   const [visible, setVisible] = useState(6);
 
   const getData = () => fetch("/api/articles").then((res) => res.json());

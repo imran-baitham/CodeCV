@@ -8,6 +8,7 @@ import tailwindimg from "../../../public/assets/tailwindcss.png";
 import vuejs from "../../../public/assets/vuejs.png";
 import bgimage from "../../../public/hero-bg.jpg";
 import { HomeCodeSlider } from "../HomeCodeSlider/HomeCodeSlider";
+import Image from "next/image";
 
 export function Tailwint() {
   return (
@@ -16,19 +17,27 @@ export function Tailwint() {
         <HomeCodeSlider />
 
         <div className="w-full md:w-1/2 flex justify-center items-center transform scale-75 md:scale-125 translate-x-0 md:translate-x-40 translate-y-20 md:translate-y-2 hidden md:flex">
-          <img
-            className="w-80 h-80 rounded-full border-4 border-white custom-shadow"
-            src={bgimage.src}
-            alt=""
-          />
+          <div className="w-80 h-80 rounded-full border-4 border-white custom-shadow relative overflow-hidden">
+            <Image
+              layout="fill"
+              objectFit="cover"
+              objectPosition={"center"}
+              src={bgimage.src}
+              alt=""
+            />
+          </div>
 
           <div className="hw-inner flex justify-between items-center absolute border dark:border-white border-gray-800 rounded-full animate-spin-slow anim-8s">
             <div className="bg-white p-1 rounded-full custom-shadow h-10 w-10  transform -translate-x-5 ">
-              <img
-                className="h-9 w-9 object-center animate-rotate-img anim-8s"
-                src={alpine.src}
-                alt=""
-              />
+              <div className="h-9 w-9 object-center animate-rotate-img anim-8s relative lg:absolute">
+                <Image
+                  layout="fill"
+                  objectFit="cover"
+                  objectPosition={"center"}
+                  src={alpine.src}
+                  alt=""
+                />
+              </div>
             </div>
             <div className="bg-white overflow-hidden rounded-full custom-shadow h-10 w-10 transform translate-x-5 ">
               <img

@@ -105,3 +105,8 @@ body {
 .boxtwo:hover {
   background-position: bottom;
 }
+
+.mantine-Pagination-item {
+  color: #eab434;
+  /* background-color: #e5e7eb; */
+}
