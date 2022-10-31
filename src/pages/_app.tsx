@@ -18,7 +18,7 @@ function MyApp({ Component, pageProps }: AppProps) {
 
 export default MyApp;
 
-const Hydrated = ({ children }: { children?: React.ReactNode }) => {
+const Hydrated = ({ children }: { children?: any }) => {
   const [hydration, setHydration] = useState<boolean>(false);
 
   useEffect(() => {

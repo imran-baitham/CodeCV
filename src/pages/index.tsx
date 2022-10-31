@@ -2,6 +2,8 @@ import type { NextPage } from "next";
 import Head from "next/head";
 import { QuizCard, Tailwint, Subscribe, Article } from "../components";
 import Academy from "../components/Academy/Academy";
+import Modal from "../components/Modal/Modal";
+import NewComp from "../components/NewComp/NewComp";
 import Slider from "../components/Slider/Slider";
 import SmallTags from "../components/SmallTag/SmallTags";
 
@@ -18,14 +20,16 @@ const Home: NextPage = () => {
       <main className="w-full dark:bg-zinc-800 bg-white">
         <div className="">
           <Tailwint />
-          <div className="py-20">
+          {/* <div className="py-20">
             <h1 className="container_main text-yellow-400 font-bold text-4xl pb-7">
               Start Quiz
             </h1>
             <QuizCard />
-          </div>
-          <Slider />
+          </div> */}
+          {/* <Slider /> */}
+          {/* <Modal /> */}
           <Article />
+          <NewComp />
           <Subscribe />
         </div>
       </main>

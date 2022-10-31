@@ -71,7 +71,7 @@ const resources = [
 export function Header() {
   const [isOpen, setIsOpen] = useState(false);
 
-  const [data, setData] = useState(null);
+  const [data, setData] = useState([]);
   const getData = () => fetch("/api/articles").then((res) => res.json());
 
   useEffect(() => {

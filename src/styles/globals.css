@@ -110,3 +110,11 @@ body {
   color: #eab434;
   /* background-color: #e5e7eb; */
 }
+
+.bgcover {
+  background-color: #e5e7eb;
+  clip-path: polygon(45% 39%, 45% 0, 100% 0, 100% 100%, 70% 100%, 30% 100%, 0 100%, 0 39%);
+}
+
+/* -webkit-clip-path: polygon(36% 31%, 36% 0, 100% 0, 100% 100%, 70% 100%, 30% 100%, 0 100%, 0 31%);
+clip-path: polygon(36% 31%, 36% 0, 100% 0, 100% 100%, 70% 100%, 30% 100%, 0 100%, 0 31%); */

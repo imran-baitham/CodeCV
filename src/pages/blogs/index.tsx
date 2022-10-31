@@ -14,7 +14,7 @@ export interface DataProps {
   image?: any;
 }
 function Index() {
-  const [data, setData] = useState(null);
+  const [data, setData] = useState([]);
   const [visible, setVisible] = useState(12);
   const [catagory, setCatagory] = useState(data);
   const getData = () => fetch("/api/articles").then((res) => res.json());

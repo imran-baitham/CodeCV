@@ -10,6 +10,7 @@ import { Loader } from "@mantine/core";
 import Head from "next/head";
 import Accordions from "../../components/Accordion/Accordion";
 import { BlogsDataProps } from "../../Utils/blogsTypes";
+import Image from "next/image";
 
 const blogsView = () => {
   const [data, setData] = useState<BlogsDataProps | any>(null);
@@ -41,13 +42,24 @@ const blogsView = () => {
   // var jsonData = JSON.stringify(blogs.description)
 
   let CodeLogs = `
-
-  // asdfasdf
-  console
-  // asdfasdfasdf
-
+  const Hydrated = ({ children }: { children?: any }) => {
+    const [hydration, setHydration] = useState<boolean>(false);
+  
+    useEffect(() => {
+      if (typeof window !== "undefined") {
+        setHydration(true);
+      }
+    }, []);
+    return hydration ? children : <div></div>;
+  };
   `;
-
+  const newArray = [
+    { id: 12, icons: "AiFillLike" },
+    { id: 12, icons: "AiTwotoneDislike" },
+    { id: 12, icons: "MdMessage" },
+    { id: 12, icons: "RiMenuFoldLine" },
+    { id: 12, icons: "ImBookmark" },
+  ];
   return (
     <div className="dark:bg-zinc-800 bg-white">
       <Head>
@@ -60,22 +72,44 @@ const blogsView = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      {/* {blogs?.bgImageUrl && (
-        <div className="bg-red-500 h-[500px]">
-          <img
-            src={blogs?.bgImageUrl.src}
-            className={"h-[500px] w-full"}
+      {blogs?.bgImageUrl && (
+        <div className="w-full h-[400px] border-4 border-white custom-shadow relative">
+          <Image
+            layout="fill"
+            objectFit="cover"
+            objectPosition={"center"}
+            src={blogs?.bgImageUrl}
             alt=""
           />
+          <h1 className="flex items-center h-full w-full justify-center font-bold text-4xl text-black relative">
+            Welcome Guest 🥳
+          </h1>
         </div>
       )}
 
       {blogs?.NetlifyBlog && (
-        <div className="bg-zinc-900 h-48 flex items-center justify-center">
-          <h1 className="font-bold text-4xl">{blogs?.NetlifyBlog}</h1>
+        <div className="dark:bg-zinc-900 bg-zinc-600 h-48 flex items-center justify-center">
+          <h1 className="font-bold text-4xl text-white">
+            {blogs?.NetlifyBlog}
+          </h1>
         </div>
-      )} */}
+      )}
       <div className="container_main pb-10 md:flex justify-between">
+        <div className="py-10 mr-2 hidden lg:block">
+          {newArray.map((z: { id: number; icons: any }) => {
+            return (
+              <div
+                className="cursor-pointer dark:bg-zinc-700 bg-gray-100 lg:w-auto hover:shadow-lg border p-3 border-yellow-600 mb-4"
+                key={z.id}
+              >
+                <h1 className="flex justify-center">
+                  <ReactIcon icon={z.icons} />
+                </h1>
+              </div>
+            );
+          })}
+        </div>
+
         <div className="lg:w-2/3 relative overflow-hidden my-10 dark:bg-zinc-700 bg-gray-100">
           <div className="bg-red-300">
             <img src={blogs?.imageUrl.src} alt="" />
@@ -90,17 +124,9 @@ const blogsView = () => {
               </p>
             </div>
             <div className="prose prose-lg mt-6 pb-5 prose-indigo text-[15px] md:text-lg mx-auto dark:text-gray-100 text-gray-700">
-              <p className="py-8">{JSON.stringify(blogs.description)}</p>
-              <p>
-                Faucibus commodo massa rhoncus, volutpat.{" "}
-                <strong>Dignissim</strong> sed <strong>eget risus enim</strong>.
-                Mattis mauris semper sed amet vitae sed turpis id. Id dolor
-                praesent donec est. Odio penatibus risus viverra tellus varius
-                sit neque erat velit. Faucibus commodo massa rhoncus, volutpat.
-                Dignissim sed eget risus enim.{" "}
-                <a href="#">Mattis mauris semper</a> sed amet vitae sed turpis
-              </p>
-              <div className="my-6">
+              <p className="text-md">{blogs.description}</p>
+              {/* <div className="my-6"> */}
+              <div className="dark:bg-black bg-gray-200 p-3 my-3">
                 <Prism
                   withLineNumbers
                   colorScheme={theme === "light" ? "light" : "dark"}
@@ -118,27 +144,10 @@ const blogsView = () => {
               </ul>
               <p>
                 Quis semper vulputate aliquam venenatis egestas sagittis quisque
-                orci. Donec commodo sit viverra aliquam porttitor ultrices
-                gravida eu. Tincidunt leo, elementum mattis elementum ut nisl,
-                justo, amet, mattis. Nunc purus, diam commodo tincidunt turpis.
-                Amet, duis sed elit interdum dignissim.
+                orci. Donec commodo sit viverra aliquam.
               </p>
+              <br />
               <h2>From beginner to expert in 30 days</h2>
-              <p>
-                Id orci tellus laoreet id ac. Dolor, aenean leo, ac etiam
-                consequat in. Convallis arcu ipsum urna nibh. Pharetra, euismod
-                vitae interdum mauris enim, consequat vulputate nibh. Maecenas
-                pellentesque id sed tellus mauris, ultrices mauris. Tincidunt
-                enim cursus ridiculus mi. Pellentesque nam sed nullam sed diam
-                turpis ipsum eu a sed convallis diam.
-              </p>
-              <blockquote>
-                <p>
-                  Sagittis scelerisque nulla cursus in enim consectetur quam.
-                  Dictum urna sed consectetur neque tristique pellentesque.
-                  Blandit amet, sed aenean erat arcu morbi.
-                </p>
-              </blockquote>
               <p>
                 Faucibus commodo massa rhoncus, volutpat. Dignissim sed eget
                 risus enim. Mattis mauris semper sed amet vitae sed turpis id.
@@ -153,7 +162,7 @@ const blogsView = () => {
                   width={1310}
                   height={873}
                 />
-                <figcaption className="font-bold text-lg mt-1">
+                <figcaption className="font-bold text-sm mt-1">
                   Sagittis scelerisque nulla cursus in enim consectetur quam.
                 </figcaption>
               </figure>
@@ -232,22 +241,13 @@ const blogsView = () => {
             </div>
           </div>
         </div>
-        <div className="py-10 hidden lg:block">
-          <div className="dark:bg-zinc-700 bg-gray-100 lg:w-[330px] h-screen shadow-xl border p-3 border-yellow-600">
+        <div className="py-10 hidden lg:block ml-2">
+          <div className="dark:bg-zinc-700 bg-gray-100 lg:w-[300px] h-screen shadow-xl border p-3 border-yellow-600">
             <h1 className="flex justify-center pt-10">Ads & feature Cards</h1>
           </div>
         </div>
       </div>
       <CourseCard />
-      <div className="dark:bg-zinc-700 h-[460px] w-[90px] left-[0px] fixed top-[120px] rounded-sm shadow-xl border border-yellow-500">
-        <div className="grid grid-rows-3 items-center justify-center">
-          <h1>sdf</h1>
-          <h1>sdf</h1>
-          <h1>sdf</h1>
-          <h1>sdf</h1>
-          <h1>sdf</h1>
-        </div>
-      </div>
     </div>
   );
 };

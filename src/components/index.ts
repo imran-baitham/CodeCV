@@ -18,3 +18,4 @@ export * from "../components/Accordion/Accordion";
 export * from "../components/Docs/Tailwint/Tailwint";
 export * from "../components/Subscribe/Subscribe";
 export * from "../components/Docs/HomeCodeSlider/HomeCodeSlider";
+export * from "./NewComp/NewComp";

@@ -14,7 +14,7 @@ import Image from "next/image";
 import { BlogsDataProps } from "../../Utils/blogsTypes";
 
 export function CourseCard() {
-  const [data, setData] = useState(null);
+  const [data, setData] = useState<any>([]);
   const getData = () => fetch("/api/articles").then((res) => res.json());
 
   useEffect(() => {

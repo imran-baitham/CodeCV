@@ -4,6 +4,9 @@ const nextConfig = {
   swcMinify: true,
   experimental: {
     esmExternals: false,
+  },
+  images: {
+    unoptimized: true
   }
 };
 

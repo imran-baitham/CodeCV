@@ -13,7 +13,7 @@ export interface DataProps {
   image?: any;
 }
 export function Article() {
-  const [data, setData] = useState<BlogsDataProps| any>(null);
+  const [data, setData] = useState<BlogsDataProps | any>(null);
   const [visible, setVisible] = useState(6);
 
   const getData = () => fetch("/api/articles").then((res) => res.json());
@@ -55,7 +55,7 @@ export function Article() {
         <h1 className="text-yellow-400 font-bold text-4xl">Letest Article</h1>
         <div className="py-8 px-1">
           <div className="grid gap-3 lg:m-0 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-            {ConvertData?.slice(0, visible).map((post: BlogsDataProps) => {
+            {ConvertData?.slice(0, visible).map((post: any) => {
               return (
                 <div
                   className="shadow rounded cursor-pointer hover:shadow-xl dark:bg-zinc-700"

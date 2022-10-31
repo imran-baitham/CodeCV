@@ -1,26 +1,41 @@
 import Demo from "../../public/Demo.jpg";
-// import VsCode from "../../public/blogsimages/blog1.jpg";
-// import VsCodeImg from "../../public/blogsimages/blog2.jpg";
-// import VsCodeTest from "../../public/blogsimages/blog3.jpg";
-// import ReactImage from "../../public/blogsimages/react.jpg";
+// import picture from "../../public/blogsimages/blog04.webp";
+// import hydratImage from "../../public/blogsimages/blog04.webp";
+import VsCodeImg from "../../public/blogsimages/hydration2.png";
 
 export const DemoData = [
   {
     id: 1,
-    slug: "Reslove-React-hydration-error-in-simple-way",
-    title: "Reslove React hydration error in simple way",
+    slug: "how-to-reslove-react-hydration-error-in-simple-way",
+    title: "Reslove react hydration error in simple way 😍",
     subtitle:
       "Fix Next.js “Text content does not match server-rendered HTML” React hydration error in Next Js",
-    description: <div>asdfasdf</div>,
-    NetlifyBlog: "Netlify Blog",
-    imageUrl: Demo,
-    likes: 5,
-    view: Math.floor(Math.random() * 500),
-    date: "Thus 15th September",
-    createdAt: new Date(),
-    code: `//logs code ...
-    export { name } from "@mane`,
+    NetlifyBlog: "React Hydration Error",
     catagory: "html",
+    imageUrl: Demo,
+
+    view: Math.floor(Math.random() * 500),
+    likes: 5,
+    date: "Thus 15th September",
+    tags: ["React", "Vue"],
+    createdAt: new Date(),
+    code: `  
+const Hydrated = ({ children }: { children?: any }) => {
+  const [hydration, setHydration] = useState<boolean>(false);
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      setHydration(true);
+    }
+  }, []);
+  return hydration ? children : <div></div>;
+};
+    `,
+    description: `
+    1. While rendering your application, there was a difference between the React tree that was pre-rendered
+    (SSR/SSG) and the React tree that rendered during the first render in the Browser.
+    
+    `,
   },
   {
     id: 2,
@@ -228,7 +243,8 @@ function Demo() {
   },
   {
     id: 12,
-    title: "Set Up and Demo test the Article 🎭",
+    slug: "set-up-and-demo-test-the-rticle",
+    title: "Set Up and Demo test the Blog 🎭",
     subtitle:
       "What books you should read in 2022? What books you should read in 2022? What books you should read in 2022? What books you should read in 2022?",
     imageUrl: Demo,
@@ -241,7 +257,6 @@ function Demo() {
     view: Math.floor(Math.random() * 500),
     date: "Thus 15th September",
     createdAt: new Date(),
-    slug: "What-books-you-should-read-in",
     catagory: "react",
   },
 ];
