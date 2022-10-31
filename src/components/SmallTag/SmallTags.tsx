@@ -41,7 +41,7 @@ function SmallTags() {
       const logic = Math.floor(Math.random() * 10);
       setCount(logic + 1 * 10);
     }, 100);
-  },[count,Infinity]);
+  }, [count]);
 
   const Random = [
     { id: 1, logic: count },

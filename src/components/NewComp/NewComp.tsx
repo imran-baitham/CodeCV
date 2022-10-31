@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import React from "react";
 import { Button } from "../Button/Button";
 import teacher from "../../public/constor.png";

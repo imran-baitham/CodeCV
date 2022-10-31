@@ -48,7 +48,7 @@ function index() {
             </h1>
             {/* </div> */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
-              {data?.map((temp: tempDataProps) => {
+              {data?.map((temp: tempDataProps | any) => {
                 return (
                   <div key={temp.id} className={"border border-yellow-600"}>
                     <div
@@ -85,7 +85,7 @@ function index() {
           </div>
           <h1 className="font-bold text-4xl py-6">Animation Tasks</h1>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 md:gap-5 gap-3 pb-20">
-            {tasks.map((cards: BlogsDataProps) => {
+            {tasks.map((cards: any) => {
               return (
                 <div
                   className="group md:h-[250px] cursor-pointer"
