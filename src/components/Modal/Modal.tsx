@@ -6,8 +6,8 @@ import { Button } from "../Button/Button";
 import Link from "next/link";
 
 const ModelData = {
-  titlecourse: "◾️Courses",
-  titletemplete: "◾️Templetes & Componets",
+  titlecourse: "🔸Courses",
+  titletemplete: "🔸Templetes & Componets",
   course: [
     { id: 1, name: "Html" },
     { id: 1, name: "Css" },
@@ -58,22 +58,22 @@ function Modal(props: modalProps) {
               </h1>
             </div>
           </div>
-          <div className="w-full lg:w-[850px]">
+          <div className="w-full lg:w-[850px] dark:bg-zinc-600">
             <div
               className="flex justify-end py-2 px-2"
               onClick={() => setShow(false)}
             >
               <ReactIcon
                 icon="VscClose"
-                className="cursor-pointer p-1 bg-yellow-900 w-8 h-8 text-white rounded-full hover:rotate-180 ease-out duration-300"
+                className="cursor-pointer p-1 shadow bg-yellow-900 hover:bg-black w-8 h-8 text-white rounded-full hover:rotate-180 ease-out duration-300"
               />
             </div>
             <div className="p-1 md:p-5">
-              <h1 className="text-xl md:text-4xl text-black font-['Nosifer']">
+              <h1 className="text-xl md:text-4xl font-['Nosifer']">
                 Our features
               </h1>
               <div className="py-3">
-                <div className="text-black flex items-center pt-3 pb-2">
+                <div className="flex items-center pt-3 pb-2">
                   <h1 className="font-bold md:text-2xl text-md pr-2">
                     {ModelData.titlecourse}
                   </h1>
@@ -87,7 +87,7 @@ function Modal(props: modalProps) {
                     );
                   })}
                 </div>
-                <div className="text-black flex items-center pt-3 pb-2">
+                <div className="flex items-center pt-3 pb-2">
                   <h1 className="font-bold md:text-2xl text-md pr-2">
                     {ModelData.titletemplete}
                   </h1>
