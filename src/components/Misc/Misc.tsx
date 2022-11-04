@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Link from "next/link";
 import React from "react";
 import bgimage from "../../public/hero-bg.jpg";
 import { Button } from "../Button/Button";
