@@ -68,7 +68,7 @@ function Modal(props: modalProps) {
                 className="cursor-pointer p-1 bg-yellow-900 w-8 h-8 text-white rounded-full hover:rotate-180 ease-out duration-300"
               />
             </div>
-            <div className="p-1">
+            <div className="p-1 md:p-5">
               <h1 className="text-xl md:text-4xl text-black font-['Nosifer']">
                 Our features
               </h1>
