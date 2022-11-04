@@ -1,13 +1,17 @@
 import type { NextPage } from "next";
 import Head from "next/head";
-import { QuizCard, Tailwint, Subscribe, Article } from "../components";
+import { useState } from "react";
+import { QuizCard, Tailwint, Subscribe, Article, Button } from "../components";
 import Academy from "../components/Academy/Academy";
+import Misc from "../components/Misc/Misc";
 import Modal from "../components/Modal/Modal";
 import NewComp from "../components/NewComp/NewComp";
 import Slider from "../components/Slider/Slider";
 import SmallTags from "../components/SmallTag/SmallTags";
 
 const Home: NextPage = () => {
+  const [show, setShow] = useState<boolean>(false);
+
   return (
     <div className="dark:bg-zinc-800 bg-white">
       <Head>
@@ -19,7 +23,9 @@ const Home: NextPage = () => {
 
       <main className="w-full dark:bg-zinc-800 bg-white">
         <div className="">
-          <Tailwint />
+          <Misc />
+
+          {/* <Tailwint /> */}
           {/* <div className="py-20">
             <h1 className="container_main text-yellow-400 font-bold text-4xl pb-7">
               Start Quiz
@@ -27,12 +33,17 @@ const Home: NextPage = () => {
             <QuizCard />
           </div> */}
           {/* <Slider /> */}
-          {/* <Modal /> */}
+          <div className="py-20">
+            <div className="container_main text-yellow-400 font-bold text-4xl pb-7">
+              <Button onClick={() => setShow(true)}>Modal</Button>
+            </div>
+          </div>
           <Article />
           <NewComp />
           <Subscribe />
         </div>
       </main>
+      {show && <Modal setShow={setShow} />}
     </div>
   );
 };
