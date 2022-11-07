@@ -51,16 +51,7 @@ const Home: NextPage = () => {
       <main className="w-full dark:bg-zinc-800 bg-white">
         <div className="">
           <Misc />
-
           {/* <Tailwint /> */}
-          {/* <div className="py-20">
-            <h1 className="container_main text-yellow-400 font-bold text-4xl pb-7">
-              Start Quiz
-            </h1>
-            <QuizCard />
-          </div> */}
-          {/* <Slider /> */}
-
           <div className="py-20">
             <div className="container_main flex justify-center text-yellow-400 font-bold text-4xl pb-7">
               <Button onClick={() => setShow(true)}>Modal</Button>
@@ -69,6 +60,13 @@ const Home: NextPage = () => {
               <Button onClick={() => ShowNotfi()}>Notification </Button>
             </div>
           </div>
+          <div className="py-20">
+            <h1 className="container_main text-yellow-400 font-bold text-4xl pb-7">
+              Start Quiz
+            </h1>
+            <QuizCard />
+          </div>
+          <Slider />
           <Article />
           <NewComp />
           <Subscribe />
