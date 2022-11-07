@@ -6,8 +6,8 @@ const nextConfig = {
     esmExternals: false,
   },
   images: {
-    unoptimized: true
-  }
+    unoptimized: true,
+  },
 };
 
 module.exports = nextConfig;

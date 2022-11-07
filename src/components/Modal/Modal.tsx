@@ -37,10 +37,16 @@ interface modalProps {
 
 function Modal(props: modalProps) {
   const { setShow } = props;
-
+  
   return (
-    <div className="w-full h-screen fixed bg-[rgba(0,0,0,0.8)] top-0 left-0 z-50 flex items-center justify-center">
-      <div className="md:w-[900px] md:h-[500px] rounded bg-white mx-3 lg:mx-0">
+    <div
+      className="w-full h-screen fixed bg-[rgba(0,0,0,0.8)] top-0 left-0 z-50 flex items-center justify-center"
+      onClick={() => setShow(false)}
+    >
+      <div
+        className="md:w-[900px] md:h-[500px] rounded bg-white mx-3 lg:mx-0"
+        onClick={(e) => e.stopPropagation()}
+      >
         <div className="md:flex w-full h-full">
           <div className="md:w-[500px] lg:w-[700px] bg-yellow-200 flex items-center justify-center">
             <div>

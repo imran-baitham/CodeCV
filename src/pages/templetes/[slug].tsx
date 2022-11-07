@@ -21,17 +21,17 @@ function templetes() {
   if (!data)
     return (
       <div className="w-full py-20 dark:bg-zinc-800">
-      <div className="container_main flex items-center justify-center h-[736px]">
-        <Loader color="gray" size="xl" variant="dots" />
+        <div className="container_main flex items-center justify-center h-[736px]">
+          <Loader color="gray" size="xl" variant="dots" />
+        </div>
       </div>
-    </div>
     );
 
   const router = useRouter();
   const { slug } = router.query;
 
   const blogs = data?.find((post: tempDataProps) => post.slug === slug);
-  console.log(blogs.fullImage, "image fuck");
+
   return (
     <div className="py-10 dark:bg-zinc-800" key={blogs.id}>
       <div className="container_main">

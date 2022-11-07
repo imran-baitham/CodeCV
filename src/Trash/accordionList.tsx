@@ -17,7 +17,9 @@ export const accordionItems = [
     title: "What is WebThone",
     content: (
       <div>
-        <h1><b>1. This is title one</b></h1>
+        <h1>
+          <b>1. This is title one</b>
+        </h1>
         <p className="bg-red-100">hellow world</p>
       </div>
     ),

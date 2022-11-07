@@ -1,6 +1,6 @@
 import type { NextPage } from "next";
 import Head from "next/head";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { QuizCard, Tailwint, Subscribe, Article, Button } from "../components";
 import Academy from "../components/Academy/Academy";
 import Misc from "../components/Misc/Misc";
@@ -11,6 +11,12 @@ import SmallTags from "../components/SmallTag/SmallTags";
 
 const Home: NextPage = () => {
   const [show, setShow] = useState<boolean>(false);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setShow(true);
+    }, 15000);
+  }, []);
 
   return (
     <div className="dark:bg-zinc-800 bg-white">
@@ -33,8 +39,9 @@ const Home: NextPage = () => {
             <QuizCard />
           </div> */}
           {/* <Slider /> */}
+
           <div className="py-20">
-            <div className="container_main text-yellow-400 font-bold text-4xl pb-7">
+            <div className="container_main flex justify-center text-yellow-400 font-bold text-4xl pb-7">
               <Button onClick={() => setShow(true)}>Modal</Button>
             </div>
           </div>
