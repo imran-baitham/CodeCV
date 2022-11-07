@@ -1,7 +1,8 @@
 import { GetServerSideProps } from "next";
 import Image from "next/image";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import bgimage from "../../public/hero-bg.jpg";
+import ownerimage from "../../public/imranbaitham.jpg";
 import { Button } from "../Button/Button";
 import { ReactIcon } from "../ReactIcon/ReactIcon";
 
@@ -29,7 +30,7 @@ function Misc() {
             layout="fill"
             objectFit="cover"
             objectPosition={"center"}
-            src={bgimage.src}
+            src={ownerimage.src}
             alt=""
           />
         </div>
@@ -38,15 +39,21 @@ function Misc() {
           <div className="flex py-1">
             <span>{" ️‍🔥 "}</span>
             <h2 className="pl-1 text-gray-600 dark:text-gray-300">
-              Senior Software Engineer @ North Aims
+              Senior Software Engineer @North Aims Technologies
             </h2>
           </div>
           <h2 className="py-1">
-            Author of 150k ★️ javascript-algorithms repo on GitHub
+            Author of 150k ★️ javascript-algorithms repo on{" "}
+            <a
+              href="https://github.com/imran-baitham"
+              className="text-blue-800 dark:text-blue-300"
+            >
+              GitHub
+            </a>
           </h2>
           <div className="flex py-1 items-center text-gray-600 dark:text-gray-300">
             <ReactIcon icon="MdMyLocation" />
-            <h2 className="pl-1">Amsterdam, The Netherlands</h2>
+            <h2 className="pl-1">Gilgit City, The Pakistan</h2>
           </div>
           <div className="md:flex">
             {linksButton.map((links) => {
