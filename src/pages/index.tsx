@@ -8,15 +8,36 @@ import Modal from "../components/Modal/Modal";
 import NewComp from "../components/NewComp/NewComp";
 import Slider from "../components/Slider/Slider";
 import SmallTags from "../components/SmallTag/SmallTags";
+import { showNotification } from "@mantine/notifications";
 
 const Home: NextPage = () => {
   const [show, setShow] = useState<boolean>(false);
 
   useEffect(() => {
+    // Modal
     setTimeout(() => {
       setShow(true);
     }, 15000);
   }, []);
+
+  useEffect(() => {
+    // Notification
+    setTimeout(() => {
+      showNotification({
+        title: `Welcome Guest 👏`,
+        message: "CodeTechly is Full Stack Website.",
+        icon: "😍",
+        autoClose: false,
+      });
+    }, 3000);
+  }, []);
+
+  const ShowNotfi = () => {
+    showNotification({
+      title: `Welcome Guest 👏`,
+      message: "Most notifications are added to queue",
+    });
+  };
 
   return (
     <div className="dark:bg-zinc-800 bg-white">
@@ -43,6 +64,9 @@ const Home: NextPage = () => {
           <div className="py-20">
             <div className="container_main flex justify-center text-yellow-400 font-bold text-4xl pb-7">
               <Button onClick={() => setShow(true)}>Modal</Button>
+            </div>
+            <div className="container_main flex justify-center text-yellow-400 font-bold text-4xl pb-7">
+              <Button onClick={() => ShowNotfi()}>Notification </Button>
             </div>
           </div>
           <Article />

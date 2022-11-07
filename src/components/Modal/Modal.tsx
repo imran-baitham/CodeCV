@@ -37,7 +37,7 @@ interface modalProps {
 
 function Modal(props: modalProps) {
   const { setShow } = props;
-  
+
   return (
     <div
       className="w-full h-screen fixed bg-[rgba(0,0,0,0.8)] top-0 left-0 z-50 flex items-center justify-center"

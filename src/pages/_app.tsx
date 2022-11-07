@@ -3,15 +3,18 @@ import type { AppProps } from "next/app";
 import { ThemeProvider } from "next-themes";
 import { useEffect, useState } from "react";
 import { Header, Footer } from "../components";
+import { NotificationsProvider } from "@mantine/notifications";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <Hydrated>
-      <ThemeProvider attribute="class">
-        <Header />
-        <Component {...pageProps} />
-        <Footer />
-      </ThemeProvider>
+      <NotificationsProvider position="bottom-right" zIndex={2077}>
+        <ThemeProvider attribute="class">
+          <Header />
+          <Component {...pageProps} />
+          <Footer />
+        </ThemeProvider>
+      </NotificationsProvider>
     </Hydrated>
   );
 }
