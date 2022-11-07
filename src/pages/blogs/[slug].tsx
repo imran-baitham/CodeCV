@@ -11,6 +11,7 @@ import Head from "next/head";
 import Accordions from "../../components/Accordion/Accordion";
 import { BlogsDataProps } from "../../Utils/blogsTypes";
 import Image from "next/image";
+import Card from "../../components/Card/Card";
 
 const blogsView = () => {
   const [data, setData] = useState<BlogsDataProps | any>(null);
@@ -60,6 +61,7 @@ const blogsView = () => {
     { id: 12, icons: "RiMenuFoldLine" },
     { id: 12, icons: "ImBookmark" },
   ];
+
   return (
     <div className="dark:bg-zinc-800 bg-white">
       <Head>
@@ -242,7 +244,10 @@ const blogsView = () => {
           </div>
         </div>
         <div className="py-10 hidden lg:block ml-2">
-          <div className="dark:bg-zinc-700 bg-gray-100 lg:w-[300px] h-screen shadow-xl border p-3 border-yellow-600">
+          <div className="dark:bg-zinc-700 bg-gray-00 lg:w-[300px] shadow-xl border p-1 border-yellow-600">
+            <div>
+              <Card />
+            </div>
             <h1 className="flex justify-center pt-10">Ads & feature Cards</h1>
           </div>
         </div>

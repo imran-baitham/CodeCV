@@ -13,24 +13,14 @@ const social = [
   "RiLinkedinBoxFill",
   "RiYoutubeFill",
 ];
+
 const linksButton = [
   { id: 1, name: "Full Stack", link: "/" },
   { id: 1, name: "JavaScript", link: "/" },
   { id: 1, name: "React Js", link: "/" },
 ];
 
-export const getServerSideProps: GetServerSideProps = async () => {
-  // Fetch data from external API
-  const res = await fetch(`https://api.github.com/users/imran-baitham`);
-  const data: any = await res.json();
-
-  return {
-    props: { data: data }, // will be passed to the page component as props
-  };
-};
-
-function Misc({ data }: any) {
-  console.log(data, "data all");
+function Misc() {
   return (
     <div className="w-full bg-gray-100 dark:bg-zinc-900 py-20 mb-8">
       <div className="container_main w-full md:flex flex-col-reverse md:flex-row justify-center items-center">

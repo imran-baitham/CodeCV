@@ -103,7 +103,7 @@ export function Footer() {
                     {navigation.legal.map((item) => (
                       <li key={item.name}>
                         <a
-                         key={item.name}
+                          key={item.name}
                           href={item.href}
                           className="text-base dark:text-gray-300 text-gray-600 dark:hover:text-gray-200 hover:text-black"
                         >

@@ -12,10 +12,10 @@ function index() {
   // eslint-disable-next-line react-hooks/rules-of-hooks
   const [data, setData] = useState<any>(null);
   const getData = () => fetch("/api/accordin").then((res) => res.json());
-//   console.log(data, "data accordians");
+  //   console.log(data, "data accordians");
 
-//   let DemoView = data?.map((x: AccordionData) => x);
-//   let Demo =  data?.map((x: any) => x.title),
+  //   let DemoView = data?.map((x: AccordionData) => x);
+  //   let Demo =  data?.map((x: any) => x.title),
 
   // eslint-disable-next-line react-hooks/rules-of-hooks
   useEffect(() => {

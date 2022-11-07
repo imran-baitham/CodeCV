@@ -38,7 +38,7 @@ function Index() {
   return (
     <>
       <div className="h-[370px] bg-black flex items-center">
-        <div className="md:bg-nature-dark bg-nature-light bg-cover object-cover bg-center h-full w-full object-cover z-10"></div>
+        <div className="md:bg-nature-dark bg-cover object-cover bg-center h-full w-full object-cover z-10"></div>
         <div className="w-full z-10 h-[370px] bg-[rgba(0,0,0,0.7)] absolute flex items-center">
           <div className="container_main w-full">
             <div className="md:w-1/2">
@@ -64,13 +64,13 @@ function Index() {
 
             <div className="text-black">
               {/* Contact form */}
-              <div className="py-10 px-6 sm:px-10 lg:col-span-2 xl:p-12 dark:text-white">
+              <div className="py-10 md:px-6 sm:px-10 lg:col-span-2 xl:p-12 dark:text-white">
                 <h1 className="font-[700] text-4xl">Let{"'"}s Talk?</h1>
                 <p className="text-md py-2">
                   Let’s make something awesome together!
                 </p>
                 <form
-                  className="mt-6 grid grid-cols-1 gap-y-4 sm:grid-cols-2 sm:gap-x-8 z-20"
+                  className="mt-6 grid grid-cols-1 gap-y-8 sm:grid-cols-2 gap-x-4 md:gap-x-6 z-20"
                   onSubmit={handleSubmit(onSubmit)}
                 >
                   <div>

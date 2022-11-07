@@ -31,7 +31,6 @@ function video() {
   const router = useRouter();
   const { slug } = router.query;
 
-  console.log(slug, "slug");
   const videoTutorial = tutorial?.find(
     (video: tutorialProps) => video.slug === slug
   );
