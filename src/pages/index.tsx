@@ -27,7 +27,6 @@ const Home: NextPage = () => {
         title: `Welcome Guest 👏`,
         message: "CodeTechly is Full Stack Website.",
         icon: "😍",
-        autoClose: false,
       });
     }, 3000);
   }, []);
