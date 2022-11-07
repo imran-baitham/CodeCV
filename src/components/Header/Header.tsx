@@ -21,6 +21,7 @@ import {
 } from "@heroicons/react/24/outline";
 // import Image from "next/image";
 import { userNotifaction } from "../../mocks/mocks";
+import SideBarMini from "./SideBarMin/SideBarMini";
 
 const solutions = [
   {
@@ -69,7 +70,8 @@ const resources = [
 ];
 
 export function Header() {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState<boolean>(false);
+  const [navbar, setNavbar] = useState<boolean>(false);
 
   const [data, setData] = useState([]);
   const getData = () => fetch("/api/articles").then((res) => res.json());
@@ -81,11 +83,11 @@ export function Header() {
   }, []);
 
   return (
-    <div className="mb-[70px] dark:bg-zinc-800 bg-white">
-      <header className="header fixed top-0 left-0 right-0 shadow-lg z-20 dark:bg-zinc-800 bg-white">
-        <nav className="flex items-center justify-between h-20 container_main">
+    <div className="mb-[70px] dark:bg-zinc-800">
+      <header className="header fixed top-0 left-0 right-0 shadow-xl md:shadow-md z-20 dark:bg-zinc-800 bg-white">
+        <nav className="flex items-center justify-between h-16 md:h-20 container_main">
           <Link href={"/"}>
-            <h1 className="cursor-pointer text-xl font-[550] text-yellow-500 hover:text-blue-100 group">
+            <h1 className="pl-3 cursor-pointer md:text-xl font-[550] text-yellow-500 hover:text-blue-100 group">
               <span className="border px-[3px] border-yellow-400 font-bold group-hover:border-blue-300">
                 code
               </span>
@@ -339,7 +341,7 @@ export function Header() {
               )}
             </Popover>
           </Popover.Group>
-          <div className="flex items-center justify-between w-[120px]">
+          <div className="flex items-center justify-between w-[160px] md:w-[120px]">
             <Menu as="div" className="relative ml-3">
               <Menu.Button className="border border-1 dark:border-white border-black p-[6px]">
                 <ReactIcon icon="RiNotification3Fill" className="w-5 h-5" />
@@ -384,9 +386,16 @@ export function Header() {
             >
               <ReactIcon icon="RiSearchFill" className="w-5 h-5" />
             </button>
+            <button
+              className="block md:hidden border border-1 dark:border-white border-black p-[6px] outline-none"
+              onClick={() => setNavbar(true)}
+            >
+              <ReactIcon icon="CgMenuRightAlt" className="w-5 h-5" />
+            </button>
           </div>
         </nav>
         {isOpen && <SearchBar isOpen={isOpen} setIsOpen={setIsOpen} />}
+        {navbar && <SideBarMini navbar={navbar} setNavbar={setNavbar} />}
         <PrograssBar />
       </header>
     </div>

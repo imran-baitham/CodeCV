@@ -137,4 +137,4 @@ export { RiMenuFoldLine } from "@react-icons/all-files/ri/RiMenuFoldLine";
 // ==========================================================================
 export { MdMyLocation } from "@react-icons/all-files/md/MdMyLocation";
 export { FiTrendingDown } from "@react-icons/all-files/fi/FiTrendingDown";
-
+export { CgMenuRightAlt } from "@react-icons/all-files/cg/CgMenuRightAlt";
