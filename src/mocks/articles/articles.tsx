@@ -1,7 +1,4 @@
 import Demo from "../../public/Demo.jpg";
-// import picture from "../../public/blogsimages/blog04.webp";
-// import hydratImage from "../../public/blogsimages/blog04.webp";
-import VsCodeImg from "../../public/blogsimages/hydration2.png";
 
 export const DemoData = [
   {
@@ -13,7 +10,6 @@ export const DemoData = [
     NetlifyBlog: "React Hydration Error",
     catagory: "html",
     imageUrl: Demo,
-
     view: Math.floor(Math.random() * 500),
     likes: 5,
     date: "Thus 15th September",

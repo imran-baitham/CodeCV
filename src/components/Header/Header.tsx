@@ -50,10 +50,12 @@ const solutions = [
     icon: "BsBuilding",
   },
 ];
+
 const callsToAction = [
   { name: "Watch Demo", href: "https://www.google.com.pk", icon: "ImPlay" },
   { name: "Contact Us", href: "/contact", icon: "RiContactsLine" },
 ];
+
 const company = [
   { name: "Quiz", href: "/quiz", icon: InformationCircleIcon },
   { name: "Articles", href: "/", icon: BuildingOfficeIcon },
@@ -89,9 +91,9 @@ export function Header() {
           <Link href={"/"}>
             <h1 className="pl-3 cursor-pointer md:text-xl font-[550] text-yellow-500 hover:text-blue-100 group">
               <span className="border px-[3px] border-yellow-400 font-bold group-hover:border-blue-300">
-                code
+                book
               </span>
-              <span className="underline pl-[2px]">T</span>echy
+              <span className="underline pl-[2px]">C</span>ler
             </h1>
           </Link>
 
@@ -355,7 +357,7 @@ export function Header() {
                 leaveFrom="transform opacity-100 scale-100"
                 leaveTo="transform opacity-0 scale-95"
               >
-                <Menu.Items className="origin-top-right absolute z-40 -right-[75px] w-[320px] md:right-0 mt-4 md:mt-2 md:w-96 rounded-md shadow-lg py-1 dark:bg-zinc-700 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none border-l-2 border-yellow-500">
+                <Menu.Items className="origin-top-right absolute z-40 -right-[95px] w-[320px] md:right-0 mt-4 md:mt-2 md:w-96 rounded-md shadow-lg py-1 dark:bg-zinc-700 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none border-l-2 border-yellow-500">
                   {userNotifaction.map((item: any) => (
                     <Menu.Item key={item.title}>
                       {({ active }) => (

@@ -1,10 +1,8 @@
-/* eslint-disable @next/next/no-img-element */
 import Head from "next/head";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import { Button, Subscribe } from "../../components";
 import { GenericLoader } from "../../components/GenericLoader/GenericLoader";
-// import Subscribe from "../../components/Subscribe/Subscribe";
 import { ViewProjectPreloader } from "./blogsSkeleton/BlogsSkeleton";
 
 export interface DataProps {
@@ -13,6 +11,7 @@ export interface DataProps {
   subtitle?: string;
   image?: any;
 }
+
 function Index() {
   const [data, setData] = useState([]);
   const [visible, setVisible] = useState(12);

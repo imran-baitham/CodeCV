@@ -37,8 +37,8 @@ export default function SectionSlider(props: CarouselProps) {
     <div className="bg-red-">
       <div className="mx-5">
         <div className="py-8">
-          <h1 className="text-yellow-400 font-bold text-4xl container_main">
-            Code Journey
+          <h1 className="text-yellow-400 font-bold text-4xl container_main text-center">
+            Code Journey Earn Money
           </h1>
         </div>
         <Swiper
