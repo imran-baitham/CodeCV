@@ -129,13 +129,21 @@ export const SearchBar: React.FC<SearchProps> = ({ isOpen, setIsOpen }) => {
                   />
                   <kbd
                     className={classNames(
-                      "mx-1 flex h-5 px-2 items-center justify-center rounded border dark:text-white dark:bg-zinc-800 bg-white font-semibold sm:mx-2 absolute top-4 right-2 text-sm",
+                      "hidden md:block mx-1 flex h-5 px-2 items-center justify-center rounded border dark:text-white dark:bg-zinc-800 bg-white font-semibold sm:mx-2 absolute top-4 right-2 text-sm",
                       rawQuery.startsWith("#")
                         ? "border-indigo-600 text-indigo-600"
                         : "border-gray-400 text-gray-900"
                     )}
                   >
                     esc
+                  </kbd>
+                  <kbd
+                    className={
+                      "block md:hidden mx-1 flex px-2 items-center justify-center rounded border dark:text-white dark:bg-zinc-800 bg-white font-semibold sm:mx-2 absolute top-4 right-2 text-sm cursor-pointer"
+                    }
+                    onClick={() => setIsOpen(false)}
+                  >
+                    x
                   </kbd>
                 </div>
                 <Divider className="w-full bg-black w-full h-1" />

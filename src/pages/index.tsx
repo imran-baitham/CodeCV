@@ -9,6 +9,7 @@ import NewComp from "../components/NewComp/NewComp";
 import Slider from "../components/Slider/Slider";
 import SmallTags from "../components/SmallTag/SmallTags";
 import { showNotification } from "@mantine/notifications";
+import { NewMisc } from "../components/Misc/NewMisc";
 
 const Home: NextPage = () => {
   const [show, setShow] = useState<boolean>(false);
@@ -49,16 +50,17 @@ const Home: NextPage = () => {
 
       <main className="w-full dark:bg-zinc-800 bg-white">
         <div className="">
+          {/* <NewMisc /> */}
           <Misc />
           {/* <Tailwint /> */}
-          <div className="py-20">
+          {/* <div className="py-20">
             <div className="container_main flex justify-center text-yellow-400 font-bold text-4xl pb-7">
               <Button onClick={() => setShow(true)}>Modal</Button>
             </div>
             <div className="container_main flex justify-center text-yellow-400 font-bold text-4xl pb-7">
               <Button onClick={() => ShowNotfi()}>Notification </Button>
             </div>
-          </div>
+          </div> */}
           <div className="py-20">
             <h1 className="container_main text-yellow-400 font-bold text-4xl pb-7">
               Start Quiz

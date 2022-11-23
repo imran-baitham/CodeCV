@@ -86,7 +86,7 @@ export default function Slider(props: CarouselProps) {
           {data.map((x) => {
             return (
               <SwiperSlide key={x.id}>
-                <div className="">
+                <div>
                   <div className="mb-16 dark:bg-zinc-700 bg-gray-200 p-2 rounded-sm">
                     <Image
                       width={"200px"}
@@ -94,7 +94,11 @@ export default function Slider(props: CarouselProps) {
                       src={x.image.src}
                       alt="programming language images"
                     />
-                    <Button sm full className="rounded-sm uppercase">
+                    <Button
+                      sm
+                      full
+                      className="rounded-sm uppercase text-[12px] md:text-sm"
+                    >
                       {x.name}
                     </Button>
                   </div>
