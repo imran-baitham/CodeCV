@@ -128,7 +128,7 @@ const blogsView = () => {
             <div className="prose prose-lg mt-6 pb-5 prose-indigo text-[15px] md:text-lg mx-auto dark:text-gray-100 text-gray-700">
               <p className="text-md">{blogs.description}</p>
               {/* <div className="my-6"> */}
-              <div className="dark:bg-black bg-gray-200 p-3 my-3">
+              <div className="dark:bg-[#141517] bg-gray-200 p-3 my-3">
                 <Prism
                   withLineNumbers
                   colorScheme={theme === "light" ? "light" : "dark"}
@@ -178,7 +178,7 @@ const blogsView = () => {
                 congue erat ac. Cras fermentum convallis quam.
               </p>
               {blogs?.code && (
-                <div className="dark:bg-black bg-gray-200 p-3 my-3">
+                <div className="dark:bg-[#141517] bg-gray-200 p-3 my-3">
                   <Prism
                     withLineNumbers
                     colorScheme={theme === "light" ? "light" : "dark"}

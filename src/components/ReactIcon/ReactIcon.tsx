@@ -26,7 +26,7 @@ export const ReactIcon = ({
 }: ReactIconLoaderProps): JSX.Element | null => {
   type IconTypeKey = keyof typeof AppIcons;
   type AppIconType = Record<IconTypeKey, IconType>;
-  const Icon = (AppIcons as AppIconType)[icon || "FaRobot"];
+  const Icon = (AppIcons as AppIconType)[icon || "GiDrippingStar"];
 
   return Icon ? <Icon {...props} /> : null;
 };
