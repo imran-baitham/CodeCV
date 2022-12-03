@@ -110,7 +110,7 @@ const demotwo = {
 export function Header() {
   const [isOpen, setIsOpen] = useState<boolean>(false)
   const [navbar, setNavbar] = useState<boolean>(false)
-  let [isScrolled, setIsScrolled] = useState(false)
+  let [isScrolled, setIsScrolled] = useState<boolean>(false)
 
   useEffect(() => {
     function onScroll() {
@@ -119,7 +119,7 @@ export function Header() {
     onScroll()
     window.addEventListener('scroll', onScroll, { passive: true })
     return () => {
-      window.removeEventListener('scroll', onScroll, { passive: true })
+      window.removeEventListener('scroll', onScroll, {})
     }
   }, [])
 
@@ -158,17 +158,19 @@ export function Header() {
                     <h2 className="font-bold text-sm pb-1 pt-3">
                       {demoone.title}
                     </h2>
-                    {demoone.data.map((data, index) => {
-                      return (
-                        <div key={index} className="flex items-center py-1">
-                          <ReactIcon
-                            className="text-green-600"
-                            icon={data.icon}
-                          />
-                          <span className="text-sm pl-1">{data.title}</span>
-                        </div>
-                      )
-                    })}
+                    {demoone.data.map(
+                      (data: { icon: any; title: string }, index) => {
+                        return (
+                          <div key={index} className="flex items-center py-1">
+                            <ReactIcon
+                              className="text-green-600"
+                              icon={data.icon}
+                            />
+                            <span className="text-sm pl-1">{data.title}</span>
+                          </div>
+                        )
+                      },
+                    )}
                     <h2 className="font-bold text-sm pb-1 pt-5">
                       {demotwo.title}
                     </h2>
