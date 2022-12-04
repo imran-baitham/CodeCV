@@ -1,9 +1,10 @@
-import "../styles/globals.css";
-import type { AppProps } from "next/app";
-import { ThemeProvider } from "next-themes";
-import { useEffect, useState } from "react";
-import { Header, Footer } from "../components";
-import { NotificationsProvider } from "@mantine/notifications";
+import '../styles/globals.css'
+import type { AppProps } from 'next/app'
+import { ThemeProvider } from 'next-themes'
+import { useEffect, useState } from 'react'
+import { Header, Footer } from '../components'
+import { NotificationsProvider } from '@mantine/notifications'
+import AffixButton from '../components/Affix/Affix'
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
@@ -12,22 +13,23 @@ function MyApp({ Component, pageProps }: AppProps) {
         <ThemeProvider attribute="class">
           <Header />
           <Component {...pageProps} />
+          <AffixButton />
           <Footer />
         </ThemeProvider>
       </NotificationsProvider>
     </Hydrated>
-  );
+  )
 }
 
-export default MyApp;
+export default MyApp
 
 const Hydrated = ({ children }: { children?: any }) => {
-  const [hydration, setHydration] = useState<boolean>(false);
+  const [hydration, setHydration] = useState<boolean>(false)
 
   useEffect(() => {
-    if (typeof window !== "undefined") {
-      setHydration(true);
+    if (typeof window !== 'undefined') {
+      setHydration(true)
     }
-  }, []);
-  return hydration ? children : <div></div>;
-};
+  }, [])
+  return hydration ? children : <div></div>
+}
