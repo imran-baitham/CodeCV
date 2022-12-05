@@ -7,7 +7,6 @@ import { PrograssBar } from '../index'
 import SideBarMini from './SideBarMin/SideBarMini'
 import clsx from 'clsx'
 import SubNotfication from './noti'
-import { Drawer, Transition } from '@mantine/core'
 
 interface dataProps {
   title: string
@@ -155,7 +154,7 @@ export function Header() {
               </div>
               <div className="hidden group-hover:block fixed top-[52px] right-[10px] lg:right-[80px] xl:right-[400px]">
                 <div className="shadow-xl bg-white dark:bg-zinc-700 mt-8 lg:w-[900px] rounded p-4 flex justify-between">
-                  <div className="shaper shadow absolute h-[460px] w-[245px] rounded top-8 left-0 z-[1px] bg-yellow-100 dark:bg-zinc-600" />
+                  <div className="shaper shadow absolute h-[440px] w-[255px] rounded top-8 left-0 z-[1px] bg-yellow-100 dark:bg-zinc-600" />
 
                   <div className="w-[230px] z-10">
                     <h2 className="font-bold text-sm pb-1 pt-3">
@@ -258,7 +257,7 @@ export function Header() {
               </div>
               <div className="hidden group-hover:block fixed top-[52px] right-[20px] lg:right-[160px] xl:right-96">
                 <div className="grid grid-cols-2 gap-5 border dark:border-zinc-600 shadow-xl bg-white dark:bg-zinc-700 mt-8 w-[600px] rounded px-8 py-6 flex justify-between">
-                  <div className="shaper shadow absolute h-[320px] w-[230px] rounded top-8 left-0 z-[1px] bg-yellow-100 dark:bg-zinc-600" />
+                  <div className="shaper shadow absolute h-[305px] w-[300px] rounded top-8 left-0 z-[1px] bg-yellow-100 dark:bg-zinc-600" />
                   {dropdowndata.map((item: dataProps) => {
                     return (
                       <Link key={item.title} href={item.href}>
@@ -296,7 +295,6 @@ export function Header() {
           </div>
         </nav>
         {isOpen && <SearchBar isOpen={isOpen} setIsOpen={setIsOpen} />}
-
         {navbar && <SideBarMini navbar={navbar} setNavbar={setNavbar} />}
 
         <PrograssBar />
