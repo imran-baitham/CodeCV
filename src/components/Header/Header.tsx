@@ -129,7 +129,7 @@ export function Header() {
         className={clsx(
           'header fixed top-0 left-0 right-0 z-20 dark:bg-zinc-800 bg-white',
           isScrolled
-            ? 'shadow-lg backdrop-blur dark:[@supports(backdrop-filter:blur(0))]:bg-zinc-900/75 [@supports(backdrop-filter:blur(0))]:bg-gray-100/80'
+            ? 'shadow-lg backdrop-blur dark:[@supports(backdrop-filter:blur(0))]:bg-zinc-800/75 [@supports(backdrop-filter:blur(0))]:bg-white/80'
             : 'shadow-sm',
         )}
       >
@@ -154,7 +154,9 @@ export function Header() {
               </div>
               <div className="hidden group-hover:block fixed top-[52px] right-[10px] lg:right-[80px] xl:right-[400px]">
                 <div className="shadow-xl bg-white dark:bg-zinc-700 mt-8 lg:w-[900px] rounded p-4 flex justify-between">
-                  <div className="w-[230px]">
+                  <div className="shaper shadow absolute h-[440px] w-[255px] rounded top-8 left-0 z-[1px] bg-yellow-100 dark:bg-zinc-600" />
+
+                  <div className="w-[230px] z-10">
                     <h2 className="font-bold text-sm pb-1 pt-3">
                       {demoone.title}
                     </h2>
@@ -179,7 +181,7 @@ export function Header() {
                         return (
                           <div key={index} className="py-1 m-1 cursor-pointer">
                             <Link href={'/'}>
-                              <span className="text-sm py-1 dark:bg-zinc-600 bg-gray-100 rounded-full px-3">
+                              <span className="text-sm py-1 dark:bg-zinc-500 bg-gray-100 rounded-full px-3">
                                 {data}
                               </span>
                             </Link>
@@ -193,7 +195,7 @@ export function Header() {
                       </span>
                     </Link>
                   </div>
-                  <div className="w-auto ml-7">
+                  <div className="w-auto ml-14 z-10">
                     <div className="grid grid-cols-2 gap-8 p-3">
                       {solutions.map((item: any) => (
                         <div
@@ -255,10 +257,11 @@ export function Header() {
               </div>
               <div className="hidden group-hover:block fixed top-[52px] right-[20px] lg:right-[160px] xl:right-96">
                 <div className="grid grid-cols-2 gap-5 border dark:border-zinc-600 shadow-xl bg-white dark:bg-zinc-700 mt-8 w-[600px] rounded px-8 py-6 flex justify-between">
+                  <div className="shaper shadow absolute h-[305px] w-[300px] rounded top-8 left-0 z-[1px] bg-yellow-100 dark:bg-zinc-600" />
                   {dropdowndata.map((item: dataProps) => {
                     return (
                       <Link key={item.title} href={item.href}>
-                        <div className="w-full cursor-pointer adf transition ease-in-out delay-150 hover:-translate-x-1 duration-300 hover:border-l-2 pl-2 border-yellow-500">
+                        <div className="z-10 w-full cursor-pointer transition ease-in-out delay-150 hover:-translate-x-1 duration-300 hover:border-l-2 pl-2 border-yellow-500">
                           <div className="flex items-center">
                             <h1 className="font-bold pr-1">{item.title}</h1>
                             <ReactIcon icon={item.icon} />
@@ -293,6 +296,7 @@ export function Header() {
         </nav>
         {isOpen && <SearchBar isOpen={isOpen} setIsOpen={setIsOpen} />}
         {navbar && <SideBarMini navbar={navbar} setNavbar={setNavbar} />}
+
         <PrograssBar />
       </header>
     </div>

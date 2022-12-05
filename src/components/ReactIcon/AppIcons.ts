@@ -138,3 +138,11 @@ export { RiMenuFoldLine } from "@react-icons/all-files/ri/RiMenuFoldLine";
 export { MdMyLocation } from "@react-icons/all-files/md/MdMyLocation";
 export { FiTrendingDown } from "@react-icons/all-files/fi/FiTrendingDown";
 export { CgMenuRightAlt } from "@react-icons/all-files/cg/CgMenuRightAlt";
+
+// ============== { AffixButton } ==================
+export { FiChevronsUp } from "@react-icons/all-files/fi/FiChevronsUp";
+export { FiActivity } from "@react-icons/all-files/fi/FiActivity";
+
+export { GrWordpress } from "@react-icons/all-files/gr/GrWordpress";
+export { GrBarChart } from "@react-icons/all-files/gr/GrBarChart";
+export { RiMoneyPoundCircleFill } from "@react-icons/all-files/ri/RiMoneyPoundCircleFill";

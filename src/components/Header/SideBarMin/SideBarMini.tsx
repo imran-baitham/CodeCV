@@ -1,6 +1,6 @@
-import React from "react";
-import { Fragment } from "react";
-import { Dialog, Transition } from "@headlessui/react";
+import React from 'react'
+import { Fragment } from 'react'
+import { Dialog, Transition } from '@headlessui/react'
 import {
   CalendarIcon,
   ChartBarIcon,
@@ -8,32 +8,32 @@ import {
   HomeIcon,
   InboxIcon,
   UsersIcon,
-} from "@heroicons/react/24/outline";
-import { classNames } from "../../Utils/Utils";
-import { ReactIcon } from "../../ReactIcon/ReactIcon";
-import Link from "next/link";
+} from '@heroicons/react/24/outline'
+import { classNames } from '../../Utils/Utils'
+import { ReactIcon } from '../../ReactIcon/ReactIcon'
+import Link from 'next/link'
 
 const navigation = [
-  { name: "Projects", href: "/templetes?item", icon: HomeIcon, current: true },
-  { name: "Quiz", href: "/quiz", icon: UsersIcon, current: false },
-  { name: "Articles", href: "/api/articles", icon: FolderIcon, current: false },
+  { name: 'Projects', href: '/templetes?item', icon: HomeIcon, current: true },
+  { name: 'Quiz', href: '/quiz', icon: UsersIcon, current: false },
+  { name: 'Articles', href: '/api/articles', icon: FolderIcon, current: false },
   {
-    name: "Videos",
-    href: "/videostutorial",
+    name: 'Videos',
+    href: '/videostutorial',
     icon: CalendarIcon,
     current: false,
   },
-  { name: "Documents", href: "#", icon: InboxIcon, current: false },
-  { name: "Blog", href: "/blogs", icon: ChartBarIcon, current: false },
-];
+  { name: 'Documents', href: '#', icon: InboxIcon, current: false },
+  { name: 'Blog', href: '/blogs', icon: ChartBarIcon, current: false },
+]
 
 interface MiniProps {
-  navbar: boolean;
-  setNavbar: any;
+  navbar: boolean
+  setNavbar: any
 }
 
 function SideBarMini(props: MiniProps) {
-  const { navbar, setNavbar } = props;
+  const { navbar, setNavbar } = props
 
   return (
     <div>
@@ -98,8 +98,8 @@ function SideBarMini(props: MiniProps) {
                       <Link key={item.name} href={item.href}>
                         <div
                           className={classNames(
-                            item.current ? "" : "",
-                            "bg-gray-300 dark:bg-zinc-800 text-gray-700 dark:text-white group flex items-center px-2 py-2 text-base font-medium rounded-md"
+                            item.current ? '' : '',
+                            'bg-gray-300 dark:bg-zinc-800 text-gray-700 dark:text-white group flex items-center px-2 py-2 text-base font-medium rounded-md',
                           )}
                         >
                           <item.icon
@@ -118,7 +118,7 @@ function SideBarMini(props: MiniProps) {
         </Dialog>
       </Transition.Root>
     </div>
-  );
+  )
 }
 
-export default SideBarMini;
+export default SideBarMini
