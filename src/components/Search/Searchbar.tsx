@@ -1,92 +1,96 @@
-import { Fragment, useState } from "react";
-import { Combobox, Dialog, Transition } from "@headlessui/react";
-import { classNames, ReactIcon } from "../index";
-import { Divider } from "@mantine/core";
+import { Fragment, useState } from 'react'
+import { Combobox, Dialog, Transition } from '@headlessui/react'
+import { classNames, ReactIcon } from '../index'
+import { Divider } from '@mantine/core'
 
 const projects = [
   {
     id: 1,
-    name: "HTMl",
-    category: "Projects",
-    url: "#",
+    name: 'HTMl',
+    category: 'Projects',
+    url: '#',
   },
   {
     id: 2,
-    name: "CSS",
-    category: "Projects",
-    url: "#",
+    name: 'CSS',
+    category: 'Projects',
+    url: '#',
   },
   {
     id: 3,
-    name: "JavaScript",
-    category: "Projects",
-    url: "###",
+    name: 'JavaScript',
+    category: 'Projects',
+    url: '###',
   },
   {
     id: 4,
-    name: "BootStrip",
-    category: "Projects",
-    url: "#",
+    name: 'BootStrip',
+    category: 'Projects',
+    url: '#',
   },
   {
     id: 5,
-    name: "React Js",
-    category: "Projects",
-    url: "#",
+    name: 'React Js',
+    category: 'Projects',
+    url: '#',
   },
   {
     id: 5,
-    name: "Talwint css",
-    category: "Projects",
-    url: "#",
+    name: 'Talwint css',
+    category: 'Projects',
+    url: '#',
+  },
+  {
+    id: 5,
+    name: 'create react app',
+    category: 'app',
+    url: '/blogs',
   },
   // More projects...
-];
+]
 const firstNavigation = [
-  { name: "Website redesign", href: "/report" },
-  { name: "GraphQL API", href: "#" },
-  { name: "Customer migration guides", href: "#" },
-];
+  { name: 'Website redesign', href: '/report' },
+  { name: 'GraphQL API', href: '#' },
+  { name: 'Customer migration guides', href: '#' },
+]
 const secondaryNavigation = [
-  { name: "Website redesign", href: "/blog" },
-  { name: "GraphQL API", href: "#" },
-  { name: "Customer migration guides", href: "#" },
-];
+  { name: 'Website redesign', href: '/blog' },
+  { name: 'GraphQL API', href: '#' },
+  { name: 'Customer migration guides', href: '#' },
+]
 const thirdNavigation = [
-  { name: "Website redesign", href: "/docs" },
-  { name: "GraphQL API", href: "#" },
-  { name: "Profit sharing program", href: "#" },
-];
+  { name: 'Website redesign', href: '/docs' },
+  { name: 'GraphQL API', href: '#' },
+  { name: 'Profit sharing program', href: '#' },
+]
 const forthNavigation = [
-  { name: "GraphQL API", href: "/projects" },
-  { name: "Customer migration guides", href: "#" },
-  { name: "Profit sharing program", href: "#" },
-];
+  { name: 'GraphQL API', href: '/projects' },
+  { name: 'Customer migration guides', href: '#' },
+  { name: 'Profit sharing program', href: '#' },
+]
 
 type SearchProps = {
-  isOpen: boolean;
-  setIsOpen: (val: boolean) => void;
-};
+  isOpen: boolean
+  setIsOpen: (val: boolean) => void
+}
 
 export const SearchBar: React.FC<SearchProps> = ({ isOpen, setIsOpen }) => {
-  const [rawQuery, setRawQuery] = useState("");
+  const [rawQuery, setRawQuery] = useState('')
 
-  const query = rawQuery.toLowerCase().replace(/^[#>]/, "");
+  const query = rawQuery.toLowerCase().replace(/^[#>]/, '')
 
   const filteredProjects =
-    rawQuery === "#"
+    rawQuery === '#'
       ? projects
-      : query === "" || rawQuery.startsWith(">")
+      : query === '' || rawQuery.startsWith('>')
       ? []
-      : projects.filter((project) =>
-          project.name.toLowerCase().includes(query)
-        );
+      : projects.filter((project) => project.name.toLowerCase().includes(query))
 
   return (
     <Transition.Root
       show={isOpen}
       as={Fragment}
-      afterLeave={() => setRawQuery("")}
+      afterLeave={() => setRawQuery('')}
       appear
     >
       <Dialog as="div" className="relative z-50" onClose={setIsOpen}>
@@ -129,17 +133,17 @@ export const SearchBar: React.FC<SearchProps> = ({ isOpen, setIsOpen }) => {
                   />
                   <kbd
                     className={classNames(
-                      "hidden md:block mx-1 flex h-5 px-2 items-center justify-center rounded border dark:text-white dark:bg-zinc-800 bg-white font-semibold sm:mx-2 absolute top-4 right-2 text-sm",
-                      rawQuery.startsWith("#")
-                        ? "border-indigo-600 text-indigo-600"
-                        : "border-gray-400 text-gray-900"
+                      'hidden md:block mx-1 flex h-5 px-2 items-center justify-center rounded border dark:text-white dark:bg-zinc-800 bg-white font-semibold sm:mx-2 absolute top-4 right-2 text-sm',
+                      rawQuery.startsWith('#')
+                        ? 'border-indigo-600 text-indigo-600'
+                        : 'border-gray-400 text-gray-900',
                     )}
                   >
                     esc
                   </kbd>
                   <kbd
                     className={
-                      "block md:hidden mx-1 flex px-2 items-center justify-center rounded border dark:text-white dark:bg-zinc-800 bg-white font-semibold sm:mx-2 absolute top-4 right-2 text-sm cursor-pointer"
+                      'block md:hidden mx-1 flex px-2 items-center justify-center rounded border dark:text-white dark:bg-zinc-800 bg-white font-semibold sm:mx-2 absolute top-4 right-2 text-sm cursor-pointer'
                     }
                     onClick={() => setIsOpen(false)}
                   >
@@ -165,10 +169,10 @@ export const SearchBar: React.FC<SearchProps> = ({ isOpen, setIsOpen }) => {
                               value={project}
                               className={({ active }) =>
                                 classNames(
-                                  "flex cursor-default select-none items-center px-5 py-5 rounded-xl border border-1 border-transparent dark:text-white text-black",
+                                  'flex cursor-default select-none items-center px-5 py-5 rounded-xl border border-1 border-transparent dark:text-white text-black',
                                   active
-                                    ? "dark:bg-zinc-900 bg-gray-200 dark:text-white text-black border border-1 border-black"
-                                    : ""
+                                    ? 'dark:bg-zinc-900 bg-gray-200 dark:text-white text-black border border-1 border-black'
+                                    : '',
                                 )
                               }
                             >
@@ -177,10 +181,10 @@ export const SearchBar: React.FC<SearchProps> = ({ isOpen, setIsOpen }) => {
                                   <ReactIcon
                                     icon="BsFolderPlus"
                                     className={classNames(
-                                      "h-6 w-6 flex-none",
+                                      'h-6 w-6 flex-none',
                                       active
-                                        ? "dark:text-gray-200 text-black"
-                                        : "text-gray-400"
+                                        ? 'dark:text-gray-200 text-black'
+                                        : 'text-gray-400',
                                     )}
                                     aria-hidden="true"
                                   />
@@ -197,7 +201,7 @@ export const SearchBar: React.FC<SearchProps> = ({ isOpen, setIsOpen }) => {
                   </Combobox.Options>
                 )}
 
-                {rawQuery === "?" && (
+                {rawQuery === '?' && (
                   <div className="py-14 px-6 text-center text-sm sm:px-14">
                     <ReactIcon
                       icon="BiSupport"
@@ -216,8 +220,8 @@ export const SearchBar: React.FC<SearchProps> = ({ isOpen, setIsOpen }) => {
                   </div>
                 )}
 
-                {query !== "" &&
-                  rawQuery !== "?" &&
+                {query !== '' &&
+                  rawQuery !== '?' &&
                   filteredProjects.length === 0 && (
                     <div className="py-14 px-6 text-center text-sm sm:px-14">
                       <ReactIcon
@@ -235,7 +239,7 @@ export const SearchBar: React.FC<SearchProps> = ({ isOpen, setIsOpen }) => {
                     </div>
                   )}
 
-                {query === "" && filteredProjects.length === 0 && (
+                {query === '' && filteredProjects.length === 0 && (
                   <div className="grid grid-cols-2 gap-4 items-center justify-between dark:bg-zinc-900 bg-gray-100 py-2.5 px-4 mt-2 text-xs text-gray-700 pb-8">
                     {/* ssecond nav */}
                     <div className="mt-8">
@@ -337,10 +341,10 @@ export const SearchBar: React.FC<SearchProps> = ({ isOpen, setIsOpen }) => {
                     <span className="text-gray-300 font-medium">For help</span>
                     <kbd
                       className={classNames(
-                        "mx-1 flex h-5 px-2 items-center justify-center rounded dark:bg-zinc-800 dark:text-white bg-white font-semibold sm:mx-2",
-                        rawQuery.startsWith("#")
-                          ? "border-indigo-600 text-indigo-600"
-                          : "border-gray-400 text-gray-900"
+                        'mx-1 flex h-5 px-2 items-center justify-center rounded dark:bg-zinc-800 dark:text-white bg-white font-semibold sm:mx-2',
+                        rawQuery.startsWith('#')
+                          ? 'border-indigo-600 text-indigo-600'
+                          : 'border-gray-400 text-gray-900',
                       )}
                     >
                       ?
@@ -351,10 +355,10 @@ export const SearchBar: React.FC<SearchProps> = ({ isOpen, setIsOpen }) => {
                     create by
                     <kbd
                       className={classNames(
-                        "mx-1 flex h-5 px-1 items-center justify-center rounded border dark:bg-zinc-800 dark:text-white bg-white font-semibold sm:mx-2",
-                        rawQuery === "?"
-                          ? "border-indigo-600 text-indigo-600"
-                          : "border-gray-400 text-gray-900"
+                        'mx-1 flex h-5 px-1 items-center justify-center rounded border dark:bg-zinc-800 dark:text-white bg-white font-semibold sm:mx-2',
+                        rawQuery === '?'
+                          ? 'border-indigo-600 text-indigo-600'
+                          : 'border-gray-400 text-gray-900',
                       )}
                     >
                       imran baitham
@@ -367,5 +371,5 @@ export const SearchBar: React.FC<SearchProps> = ({ isOpen, setIsOpen }) => {
         </div>
       </Dialog>
     </Transition.Root>
-  );
-};
+  )
+}

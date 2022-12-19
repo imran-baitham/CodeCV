@@ -1,43 +1,43 @@
 /* eslint-disable react/jsx-key */
-import Link from "next/link";
-import { ReactIcon } from "../index";
+import Link from 'next/link'
+import { ReactIcon } from '../index'
 
 const navigation = {
   solutions: [
-    { name: "Analytics", href: "#" },
-    { name: "Commerce", href: "#" },
-    { name: "Insights", href: "#" },
-    { name: "Marketing", href: "#" },
+    { name: 'Analytics', href: '#' },
+    { name: 'Commerce', href: '#' },
+    { name: 'Insights', href: '#' },
+    { name: 'Marketing', href: '#' },
   ],
   support: [
-    { name: "Documentation", href: "#" },
-    { name: "API Status", href: "#" },
-    { name: "Pricing", href: "#" },
+    { name: 'Documentation', href: '#' },
+    { name: 'API Status', href: '#' },
+    { name: 'Pricing', href: '#' },
     // { name: "Guides", href: "#" },
   ],
   company: [
-    { name: "About", href: "#" },
-    { name: "Blog", href: "#" },
-    { name: "Jobs", href: "/contact" },
-    { name: "Press", href: "#" },
+    { name: 'About', href: '#' },
+    { name: 'Blog', href: '#' },
+    { name: 'Jobs', href: '/contact' },
+    { name: 'Press', href: '#' },
   ],
   legal: [
-    { name: "Privacy", href: "#" },
-    { name: "Claim", href: "#" },
-    { name: "Terms", href: "#" },
+    { name: 'Privacy', href: '#' },
+    { name: 'Claim', href: '#' },
+    { name: 'Terms', href: '#' },
   ],
-};
+}
 let LinkMedia = [
-  { name: "RiFacebookBoxFill", href: "#" },
-  { name: "RiTwitterFill", href: "#" },
-  { name: "RiInstagramFill", href: "#" },
-  { name: "RiLinkedinBoxFill", href: "#" },
-  { name: "RiYoutubeFill", href: "#" },
-];
+  { name: 'RiFacebookBoxFill', href: '#' },
+  { name: 'RiTwitterFill', href: '#' },
+  { name: 'RiInstagramFill', href: '#' },
+  { name: 'RiLinkedinBoxFill', href: '#' },
+  { name: 'RiYoutubeFill', href: '#' },
+]
 
 export function Footer() {
-  const d = new Date();
-  let year = d.getFullYear();
+  const d = new Date()
+  let year = d.getFullYear()
 
   return (
     <footer
@@ -117,7 +117,7 @@ export function Footer() {
             </div>
             <div className="mt-8 xl:mt-0">
               <h3 className="text-lg font-semibold">Website Name</h3>
-              <p className="mt-4 text-base dark:text-gray-300 text-gray-600 dark:hover:text-gray-200 hover:text-black">
+              <p className="mt-4 text-base dark:text-gray-300 text-gray-600 dark:hover:text-gray-200 hover:text-black w-auto md:w-[45%] xl:w-auto">
                 The latest news, articles, and resources, Follow Us. Choose your
                 book to reading, we offer you the books With Delivery. Follow Us
                 on Social Media.
@@ -132,7 +132,7 @@ export function Footer() {
                     >
                       <ReactIcon icon={x.name} />
                     </a>
-                  );
+                  )
                 })}
               </div>
             </div>
@@ -159,5 +159,5 @@ export function Footer() {
         </div>
       </div>
     </footer>
-  );
+  )
 }

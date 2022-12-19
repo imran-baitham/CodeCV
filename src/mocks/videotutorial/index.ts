@@ -5,7 +5,7 @@ import Mantore from "../../public/VideoTutorials/mantores2.jpg";
 export let VideoList = [
   {
     id: 123,
-    Mentor: Mantore,
+    Mentor: DemoImage,
     slug: "Learn-Html-in-1-Hours",
     title: "Learn Html in 1 Hours",
     video: "https://www.youtube.com/embed/qz0aGYrrlhU",
@@ -18,7 +18,7 @@ export let VideoList = [
     like: false,
     share: [1, 2, 3, 4, 5],
     MentorName: "Imran Baitham",
-    MentorImage: Mantore,
+    MentorImage: DemoImage,
     subtitle: "subtitle of tutorial",
     discription:
       "Joseph is our subtitle of tutorial. He brings over a decade of product, design, and education experience. Before joining Sketch, he was a Senior Product Designer at InVision and was also responsible for the design education courses for InVision Studio and DSM.",
@@ -26,7 +26,7 @@ export let VideoList = [
   },
   {
     id: 123,
-    Mentor: Mantores,
+    Mentor: DemoImage,
     slug: "SEO-Course-for-Begnr",
     title: "SEO Course for Begnr",
     video: "https://www.youtube.com/embed/qz0aGYU",
@@ -38,7 +38,7 @@ export let VideoList = [
     completed: false,
     like: false,
     share: [1, 2, 3, 4, 5],
-    MentorImage: Mantore,
+    MentorImage: DemoImage,
     MentorName: "Imran Baitham",
     subtitle: "subtitle of tutorial",
     discription:

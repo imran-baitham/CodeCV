@@ -21,7 +21,17 @@ function index() {
     return (
       <div className="w-full py-20 dark:bg-zinc-800">
         <div className="container_main">
-          <GenericLoader shapes={[['line'], ['line'], ['line']]} />
+          <GenericLoader
+            shapes={[
+              ['line', 'line', 'line'],
+              ['line', 'line', 'line'],
+              ['line', 'line', 'line'],
+              ['line', 'line', 'line'],
+              ['line', 'line', 'line'],
+              ['line', 'line', 'line'],
+              ['line', 'line', 'line'],
+            ]}
+          />
           <ul
             role="list"
             className="w-full grid grid-cols-1 gap-3 sm:grid-cols-2 md:grid-cols-3"

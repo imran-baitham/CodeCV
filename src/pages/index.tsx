@@ -19,6 +19,7 @@ import { showNotification } from '@mantine/notifications'
 import { NewMisc } from '../components/Misc/NewMisc'
 import { Badge, Transition } from '@mantine/core'
 import { FeaturesAsymmetrical } from '../components/Feature/Feature'
+import OrgnMisc from '../components/Misc/OrgnMisc'
 
 const Home: NextPage = () => {
   const [show, setShow] = useState<boolean>(false)
@@ -62,6 +63,7 @@ const Home: NextPage = () => {
         <div className="">
           {/* <NewMisc /> */}
           <Misc />
+          {/* <OrgnMisc /> */}
           {/* <Tailwint /> */}
           <div>
             {/* <div className="container_main flex justify-center text-yellow-400 font-bold text-4xl pb-7">

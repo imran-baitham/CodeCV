@@ -23,6 +23,7 @@
     "@mantine/notifications": "^5.7.1",
     "@mantine/prism": "^5.3.0",
     "@react-icons/all-files": "^4.1.0",
+    "axios": "^1.2.1",
     "clsx": "^1.2.1",
     "hygen": "^6.2.11",
     "next": "12.3.0",

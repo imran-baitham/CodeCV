@@ -6,7 +6,7 @@ import Link from "next/link";
 import { tutorialProps } from "../../Utils/tutorials";
 import { useRouter } from "next/router";
 
-let data = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
+let data = [1, 2, 3, 4, 5];
 let LinkMedia = [
   { name: "RiFacebookBoxFill", href: "#" },
   { name: "RiTwitterFill", href: "#" },
@@ -37,7 +37,7 @@ function video() {
 
   return (
     <div className="w-full dark:bg-zinc-800 bg-white">
-      <div className="container_div pt-20 pb-20">
+      <div className="container_main pt-20 pb-20">
         <div className="flex justify-between py-10">
           <Link href={"/videostutorial"}>
             <div className="flex items-center cursor-pointer">
@@ -54,7 +54,7 @@ function video() {
         </div>
         <div className="flex justify-between">
           <div className="w-full">
-            <div className="h-auto md:h-[605px] dark:bg-zinc-700 shadow-xl p-2 rounded-md">
+            <div className="h-auto md:h-[486px] dark:bg-zinc-700 shadow-xl p-2 rounded-md">
               <div className="rounded md:h-full bg-zinc-900 flex items-center justify-center">
                 <iframe
                   width="100%"
@@ -202,7 +202,7 @@ function video() {
                 <h1 className="text-2xl font-bold">{videoTutorial?.title}</h1>
                 <span className="text-sm">Video Tutorials</span>
               </div>
-              <div className="my-3 py-1 dark:bg-zinc-700 bg-gray-100 rounded-sm h-[500px] overflow-y-auto overflow-x-hidden">
+              <div className="shadow-xl my-3 py-1 dark:bg-zinc-700 bg-gray-00 rounded-sm h-[385px] overflow-y-auto overflow-x-hidden">
                 {data.map((x) => {
                   return (
                     <h1
